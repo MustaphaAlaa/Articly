@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Articly.Entites")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41ea40987b8169eaf41a1cbdc757f4b46e21ddaf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Articly.Entites")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Articly.Entites")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

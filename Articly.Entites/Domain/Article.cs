@@ -1,13 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System;
-using Entities.ViewsModel.Blogs;
+using Entities.ViewsModel.Articles;
 namespace Entities.Domain;
 
 public class Article 
 {
 
     [Key]
-    public Guid BlogID { get; set; } = Guid.NewGuid();
+    public Guid ArticleID { get; set; } = Guid.NewGuid();
 
     [Required]
     public string Heading { get; set; }
@@ -33,16 +33,16 @@ public class Article
     public bool Visible { get; set; }
 
 
-    public IEnumerable<BlogsTags> Blogs { get; set; }
+    public IEnumerable<ArticlesTags> Blogs { get; set; }
 
 
-    public BlogResponse ToResponse()
+    public ArticleResponse ToResponse()
 
     {
 
-        return new BlogResponse()
+        return new ArticleResponse ()
         {
-            BlogID = this.BlogID,
+            ArticleID = this.ArticleID,
 
 
             Heading = this.Heading,

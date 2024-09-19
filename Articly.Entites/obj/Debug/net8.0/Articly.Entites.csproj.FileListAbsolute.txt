@@ -1,0 +1,12 @@
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.AssemblyInfoInputs.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.AssemblyInfo.cs
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.csproj.CoreCompileInputs.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\bin\Debug\net8.0\Articly.Entites.deps.json
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\bin\Debug\net8.0\Articly.Entites.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\bin\Debug\net8.0\Articly.Entites.pdb
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\refint\Articly.Entites.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.pdb
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\ref\Articly.Entites.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.csproj.AssemblyReference.cache

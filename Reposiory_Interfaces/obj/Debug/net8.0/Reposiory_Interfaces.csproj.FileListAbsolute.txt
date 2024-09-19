@@ -1,0 +1,15 @@
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\bin\Debug\net8.0\Reposiory_Interfaces.deps.json
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\bin\Debug\net8.0\Reposiory_Interfaces.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\bin\Debug\net8.0\Reposiory_Interfaces.pdb
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\bin\Debug\net8.0\Articly.Entites.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\bin\Debug\net8.0\Articly.Entites.pdb
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.csproj.AssemblyReference.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.AssemblyInfoInputs.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.AssemblyInfo.cs
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposior.3A4A9CA9.Up2Date
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\refint\Reposiory_Interfaces.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\Reposiory_Interfaces.pdb
+C:\Users\anama\OneDrive\Desktop\Articles\Reposiory_Interfaces\obj\Debug\net8.0\ref\Reposiory_Interfaces.dll

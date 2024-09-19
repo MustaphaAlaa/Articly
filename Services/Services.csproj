@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Articly.Entites\Articly.Entites.csproj" />
+    <ProjectReference Include="..\Reposiory_Interfaces\Reposiory_Interfaces.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

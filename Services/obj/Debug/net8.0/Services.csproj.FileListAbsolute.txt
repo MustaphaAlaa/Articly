@@ -13,3 +13,5 @@ C:\Users\anama\OneDrive\Desktop\Articles\Services\obj\Debug\net8.0\Services.dll
 C:\Users\anama\OneDrive\Desktop\Articles\Services\obj\Debug\net8.0\refint\Services.dll
 C:\Users\anama\OneDrive\Desktop\Articles\Services\obj\Debug\net8.0\Services.pdb
 C:\Users\anama\OneDrive\Desktop\Articles\Services\obj\Debug\net8.0\ref\Services.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Services\bin\Debug\net8.0\Reposiory_Interfaces.dll
+C:\Users\anama\OneDrive\Desktop\Articles\Services\bin\Debug\net8.0\Reposiory_Interfaces.pdb
