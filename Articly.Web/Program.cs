@@ -25,8 +25,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ITag, TagService>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
-// builder.Services.AddScoped<IArticle, ArticleServices>();
-// builder.Services.AddScoped<IArticleRepository, ArticleRepository>(); 
+  builder.Services.AddScoped<IArticle, ArticleServices>();
+ builder.Services.AddScoped<IArticleRepository, ArticleRepository>(); 
 
 builder.Services.AddDbContext<ArticleDbContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
