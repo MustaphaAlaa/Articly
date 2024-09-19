@@ -18,6 +18,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\anama\OneDrive\Desktop\Articles\Articly.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminBlogs/AddBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nc1xBZGRCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminBlogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/AddTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXEFkZFRhZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/DeleteTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXERlbGV0ZVRhZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/ReadTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXFJlYWRUYWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/UpdateTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXFVwZGF0ZVRhZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

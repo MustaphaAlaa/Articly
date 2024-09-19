@@ -10,3 +10,5 @@ C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\refint
 C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.pdb
 C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\ref\Articly.Entites.dll
 C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.csproj.AssemblyReference.cache
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\bin\Debug\net8.0\Articly.Entites.runtimeconfig.json
+C:\Users\anama\OneDrive\Desktop\Articles\Articly.Entites\obj\Debug\net8.0\Articly.Entites.genruntimeconfig.cache

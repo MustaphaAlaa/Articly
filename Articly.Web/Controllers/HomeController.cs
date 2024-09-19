@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Articly.Web.Models;
 
-namespace Articly.Web.Controllers;
+namespace Bloggie.Web.Controllers;
 
 public class HomeController : Controller
 {
@@ -15,6 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        _logger.LogInformation($"Reached To Index In {this.GetType().Name}");
+
         return View();
     }
 

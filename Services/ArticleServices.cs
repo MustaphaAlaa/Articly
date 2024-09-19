@@ -1,124 +1,123 @@
-﻿// using Bloggie.Services.Helper;
-// using Bloggie_Services;
-// using Entities.Domain;
-// using Entities.ViewsModel.Blogs;
-// using Microsoft.Extensions.Logging;
-// using Repository_Interfaces;
-// using ServicesInterfaces;
-// using System;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Text;
-// using System.Threading.Tasks;
+﻿using Bloggie.Services.Helper;
+using Entities.Domain;
+using Entities.ViewsModel.Articles;
+using Microsoft.Extensions.Logging;
+using Repository_Interfaces;
+using ServicesInterfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-// namespace Articly_Services
-// {
-//     public class ArticleServices : IBlog
-//     {
-//         private readonly IBlogRepository _BlogRepository;
-//         private readonly ILogger<ArticleServices> _logger;
-
-
-//         public ArticleServices(IBlogRepository BlogRepository, ILogger<ArticleServices> logger)
-//         {
-//             _BlogRepository = BlogRepository;
-//             _logger = logger;
-//         }
-
-//         public async Task<BlogResponse?> AddBlogAsync(AddBlogRequest BlogRequest)
-//         {
-//             _logger.LogInformation($"Reached To AddBlog() In {this.GetType().Name}");
-//             try
-//             {
-//                 if (BlogRequest == null)
-//                     throw new ArgumentNullException(nameof(BlogRequest));
+namespace Articly_Services
+{
+    public class ArticleServices : IArticle
+    {
+        private readonly IArticleRepository _articleRepository;
+        private readonly ILogger<ArticleServices> _logger;
 
 
+        public ArticleServices(IArticleRepository BlogRepository, ILogger<ArticleServices> logger)
+        {
+            _articleRepository = BlogRepository;
+            _logger = logger;
+        }
 
-//                 ModelValidate.ModelValidation(BlogRequest);
-//             }
-//             catch (Exception exception)
-//             {
-//                 _logger.LogError(exception.Message);
-//                 return null;
-//             }
-
-//             //List<Guid> Tags = new();
-
-//             //foreach (string tag in BlogRequest.SelectedTags)
-//             //{
-//             //    Tags.Add(Guid.Parse(tag));
-//             //}
-
-//             Blog Blog = BlogRequest.ToBlog();
-//             //Blog.
-//             Blog.BlogID = Guid.NewGuid();
-
-//             await _BlogRepository.AddAsync(Blog);
-
-
-//             return Blog.ToResponse();
-//         }
-
-//         public async Task<bool> DeleteBlogAsync(Guid id)
-//         {
-//             _logger.LogInformation($"Reached To DeleteBlogAsync() In {this.GetType().Name}");
-//             if (id == Guid.Empty)
-//                 return false;
-
-//             if (this.GetBlogAsync(id).Result == null)
-//                 return false;
-
-//             return await _BlogRepository.DeleteAsync(id);
-//         }
-
-//         public async Task<BlogResponse?> GetBlogAsync(Guid id)
-//         {
-//             _logger.LogInformation($"Reached To GetBlogById() In {this.GetType().Name}");
-//             var Blog = await _BlogRepository.GetByIdAsync(id);
-//             return Blog.ToResponse();
-//         }
-
-
-//         public async Task<BlogResponse?> UpdateBlogAsync(UpdateBlogRequest Blog)
-//         {
-//             Blog? UpdatedBlog;
-//             try
-//             {
-//                 if (Blog == null)
-//                     throw new ArgumentNullException(nameof(Blog));
-
-//                 UpdatedBlog = await _BlogRepository.GetByIdAsync(Blog.BlogId);
-
-//                 if (UpdatedBlog == null)
-//                     throw new Exception("Can't Find This ID");
-
-//                 ModelValidate.ModelValidation(Blog);
-//             }
-//             catch (Exception exception)
-//             {
-//                 _logger.LogError(exception.Message);
-//                 return null;
-//             }
+        public async Task<ArticleResponse?> AddArticleAsync(AddArticleRequest articleRequest)
+        {
+            _logger.LogInformation($"Reached To AddArticle() In {this.GetType().Name}");
+            try
+            {
+                if (articleRequest == null)
+                    throw new ArgumentNullException(nameof(articleRequest));
 
 
 
-//             Blog? BlogIsUpdated = await _BlogRepository.UpdateAsync(UpdatedBlog);
+                ModelValidate.ModelValidation(articleRequest);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception.Message);
+                return null;
+            }
 
-//             return BlogIsUpdated?.ToResponse();
-//         }
-//         public async Task<List<BlogResponse>> GetAllAsync()
-//         {
-//             _logger.LogInformation("Reached To GetAll In BlogServices");
+            //List<Guid> Tags = new();
 
-//             var BlogResponseList = await _BlogRepository.GetAllAsync();
+            //foreach (string tag in BlogRequest.SelectedTags)
+            //{
+            //    Tags.Add(Guid.Parse(tag));
+            //}
 
-//             return BlogResponseList
-//                 .ToList()
-//                 .Select(Blog => Blog.ToResponse())
-//                 .ToList();
-//         }
+            Article article = articleRequest.ToArticle();
+            //Blog.
+            article.ArticleID  = Guid.NewGuid();
+
+            await _articleRepository.AddAsync(article);
 
 
-//     }
-// }
+            return article.ToResponse();
+        }
+
+        public async Task<bool> DeleteArticleAsync(Guid id)
+        {
+            _logger.LogInformation($"Reached To DeleteBlogAsync() In {this.GetType().Name}");
+            if (id == Guid.Empty)
+                return false;
+
+            if (this.GetArticleAsync(id).Result == null)
+                return false;
+
+            return await _articleRepository.DeleteAsync(id);
+        }
+
+        public async Task<ArticleResponse?> GetArticleAsync(Guid id)
+        {
+            _logger.LogInformation($"Reached To GetBlogById() In {this.GetType().Name}");
+            var Blog = await _articleRepository.GetByIdAsync(id);
+            return Blog.ToResponse();
+        }
+
+
+        public async Task<ArticleResponse?> UpdateArticleAsync(UpdateArticleRequest article)
+        {
+            Article? UpdatedArticle;
+            try
+            {
+                if (article == null)
+                    throw new ArgumentNullException(nameof(article));
+
+                UpdatedArticle = await _articleRepository.GetByIdAsync(article.ArticleID);
+
+                if (UpdatedArticle == null)
+                    throw new Exception("Can't Find This ID");
+
+                ModelValidate.ModelValidation(article);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception.Message);
+                return null;
+            }
+
+
+
+            Article? ArticleIsUpdated = await _articleRepository.UpdateAsync(UpdatedArticle);
+
+            return ArticleIsUpdated?.ToResponse();
+        }
+        public async Task<List<ArticleResponse>> GetAllAsync()
+        {
+            _logger.LogInformation("Reached To GetAll In BlogServices");
+
+            var ArticleResponseList = await _articleRepository.GetAllAsync();
+
+            return ArticleResponseList
+                .ToList()
+                .Select(article => article.ToResponse())
+                .ToList();
+        }
+
+
+    }
+}
