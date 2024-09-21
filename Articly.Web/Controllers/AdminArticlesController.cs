@@ -29,19 +29,21 @@ namespace Articly.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddBlog()
+        public async Task<IActionResult> AddArticle()
         {
-            _logger.LogInformation($"Reached To AddBlog() In {this.GetType().Name}");
+            _logger.LogInformation($"Reached To AddArticle() In {this.GetType().Name}");
 
 
             AddArticleRequest addArticleRequest = new AddArticleRequest();
             List<TagResponse> tagResponses = await _tag.GetAll();
-            addArticleRequest.Tags = tagResponses.Select(t => t.ToTag());
+            ViewBag.Tags = tagResponses;
+
+            //addArticleRequest.Tags = tagResponses.Select(t => t.ToTag());
 
             return View(addArticleRequest);
         }
         [HttpPost]
-        public async Task<IActionResult> AddBlog(AddArticleRequest article)
+        public async Task<IActionResult> AddArticle(AddArticleRequest article)
         {
             _logger.LogInformation($"Reached To AddArticle() In {this.GetType().Name}");
 
@@ -51,12 +53,12 @@ namespace Articly.Web.Controllers
 
 
             return RedirectToAction("Index");
-         }
+        }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateBlog(Guid BlogId)
+        public async Task<IActionResult> UpdateArticle(Guid BlogId)
         {
-            _logger.LogInformation($"Reached To (HttpGet)UpdaetBlog() In {this.GetType().Name}");
+            _logger.LogInformation($"Reached To (HttpGet)UpdaetArticle() In {this.GetType().Name}");
 
             var GetBlog = await _ArticleServices.GetArticleAsync(BlogId);
             if (GetBlog != null)
@@ -65,7 +67,7 @@ namespace Articly.Web.Controllers
                 return RedirectToAction("index");
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateTheBlog(UpdateArticleRequest article)
+        public async Task<IActionResult> UpdateTheArticle(UpdateArticleRequest article)
         {
             _logger.LogInformation($"Reached To (HttpPost)UpdateArticle() In {this.GetType().Name}");
 
@@ -75,13 +77,13 @@ namespace Articly.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteBlog(Guid BlogId)
+        public async Task<IActionResult> DeleteArticle(Guid ArticleId)
         {
             _logger.LogInformation($"Reached To (HttpGet)DeleteArticle() In {this.GetType().Name}");
 
-            var BlogResponse = await _ArticleServices.GetArticleAsync(BlogId);
-            if (BlogResponse != null)
-                return View(BlogResponse);
+            var ArticleResponse = await _ArticleServices.GetArticleAsync(ArticleId);
+            if (ArticleResponse != null)
+                return View(ArticleResponse);
             else
                 return RedirectToAction("index");
         }

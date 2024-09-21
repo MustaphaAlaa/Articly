@@ -1,9 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 using Entities.ViewsModel.Articles;
+using System.Runtime.CompilerServices;
+using Entities.ViewsModel.Tags;
 namespace Entities.Domain;
 
-public class Article 
+public class Article
 {
 
     [Key]
@@ -32,37 +34,63 @@ public class Article
 
     public bool Visible { get; set; }
 
+    public ICollection<Tag> Tags { get; set; }
 
-    public IEnumerable<ArticlesTags> Blogs { get; set; }
+    public ICollection<ArticlesTags> Blogs { get; set; }
 
 
-    public ArticleResponse ToResponse()
+
+}
+
+
+public static class Extensions
+{
+    public static ArticleResponse ToResponse(this Article article)
 
     {
 
-        return new ArticleResponse ()
+        return new ArticleResponse()
         {
-            ArticleID = this.ArticleID,
+            ArticleID = article.ArticleID,
 
 
-            Heading = this.Heading,
+            Heading = article.Heading,
 
 
-            PageTitle = this.PageTitle,
+            PageTitle = article.PageTitle,
 
 
-            Contnet = this.Contnet,
+            Contnet = article.Contnet,
 
-            ShortDescription = this.ShortDescription,
+            ShortDescription = article.ShortDescription,
 
 
-            FeaturedImaageUrl = this.FeaturedImaageUrl,
+            FeaturedImaageUrl = article.FeaturedImaageUrl,
 
-            PublishDate = this.PublishDate,
+            PublishDate = article.PublishDate,
 
-            Author = this.Author,
+            Author = article.Author,
 
-            Visible = this.Visible
+            Visible = article.Visible
         };
     }
+
+
+
+
+    public static TagResponse ToResponse(this Tag tag)
+    {
+        return new TagResponse() { TagID = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
+
+    }
+
+    public static Tag ToTag(this TagResponse tag)
+    {
+        return new Tag() { TagID = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
+
+    }
+
+
+
+
 }

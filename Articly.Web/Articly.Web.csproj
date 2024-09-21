@@ -1,6 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Articly.Entites\Articly.Entites.csproj" />
     <ProjectReference Include="..\Reposiory_Interfaces\Reposiory_Interfaces.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />

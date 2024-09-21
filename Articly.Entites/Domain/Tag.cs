@@ -16,13 +16,9 @@ public class Tag
     public string DisplayName { get; set; }
 
 
+    public ICollection<Article> Articles { get; set; }
+    public ICollection<ArticlesTags> ArticlesTags { get; }
 
-    public IEnumerable<ArticlesTags> ArticlesTags { get; }
 
-    public TagResponse ToResponse()
-    {
-        return new TagResponse() { TagID = this.TagID, Name = this.Name, DisplayName = this.DisplayName };
-
-    }
 
 }

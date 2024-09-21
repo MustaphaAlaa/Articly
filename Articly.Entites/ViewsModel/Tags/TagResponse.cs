@@ -17,15 +17,15 @@ namespace Entities.ViewsModel.Tags
 
         public string DisplayName { get; set; }
 
-        public Tag ToTag()
-        {
-            return new Tag()
-            {
-                TagID = this.TagID,
+        //public Tag ToTag()
+        //{
+        //    return new Tag()
+        //    {
+        //        TagID = this.TagID,
 
-                Name = this.Name,
-                DisplayName = this.DisplayName
-            };
-        }
+        //        Name = this.Name,
+        //        DisplayName = this.DisplayName
+        //    };
+        //}
     }
 }

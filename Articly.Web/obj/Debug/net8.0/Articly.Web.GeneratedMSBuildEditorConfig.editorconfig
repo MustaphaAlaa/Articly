@@ -18,12 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\anama\OneDrive\Desktop\Articles\Articly.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminBlogs/AddBlog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nc1xBZGRCbG9nLmNzaHRtbA==
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminArticles/AddArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BcnRpY2xlc1xBZGRBcnRpY2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminBlogs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nc1xJbmRleC5jc2h0bWw=
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminArticles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BcnRpY2xlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/AdminTags/AddTag.cshtml]

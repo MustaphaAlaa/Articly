@@ -1,10 +1,10 @@
-using  DataAccessLayer;
+using Entities;
 using Microsoft.EntityFrameworkCore;
- 
+
 using ServicesInterfaces;
 using Repository_Interfaces;
 using Repositories;
- using Articly_Services;
+using Articly_Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,8 +25,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ITag, TagService>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
-  builder.Services.AddScoped<IArticle, ArticleServices>();
- builder.Services.AddScoped<IArticleRepository, ArticleRepository>(); 
+builder.Services.AddScoped<IArticle, ArticleServices>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
 builder.Services.AddDbContext<ArticleDbContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

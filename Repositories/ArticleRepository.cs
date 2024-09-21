@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Collections.Concurrent;
- using Entities.Domain;
+using Entities.Domain;
 using Microsoft.EntityFrameworkCore;
 using Repository_Interfaces;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DataAccessLayer;
+using Entities;
 namespace Repositories
 {
     public class ArticleRepository : IArticleRepository

@@ -16,12 +16,13 @@ namespace Articly_Services
     {
         private readonly IArticleRepository _articleRepository;
         private readonly ILogger<ArticleServices> _logger;
+        private readonly ITag _tag;
 
-
-        public ArticleServices(IArticleRepository BlogRepository, ILogger<ArticleServices> logger)
+        public ArticleServices(ITag tag, IArticleRepository BlogRepository, ILogger<ArticleServices> logger)
         {
             _articleRepository = BlogRepository;
             _logger = logger;
+            _tag = tag;
         }
 
         public async Task<ArticleResponse?> AddArticleAsync(AddArticleRequest articleRequest)
@@ -42,16 +43,21 @@ namespace Articly_Services
                 return null;
             }
 
-            //List<Guid> Tags = new();
+            List<Tag> Tags = new();
 
-            //foreach (string tag in BlogRequest.SelectedTags)
-            //{
-            //    Tags.Add(Guid.Parse(tag));
-            //}
+            foreach (string tagID in articleRequest.SelectedTags)
+            {
+                var t = await _tag.GetTagById(Guid.Parse(tagID));
+
+                Tags.Add(t.ToTag());
+            }
 
             Article article = articleRequest.ToArticle();
             //Blog.
-            article.ArticleID  = Guid.NewGuid();
+            article.Tags = Tags;
+            article.PublishDate = DateTime.Now;
+
+            article.ArticleID = Guid.NewGuid();
 
             await _articleRepository.AddAsync(article);
 

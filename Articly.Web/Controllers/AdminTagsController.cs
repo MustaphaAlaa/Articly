@@ -27,7 +27,7 @@ public class AdminTagsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> AddTag()
+    public IActionResult AddTag()
     {
         _Logger.LogInformation($"Reached To AddTag() In {this.GetType().Name}");
 

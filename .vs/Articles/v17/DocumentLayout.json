@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|solutionrelative:articly.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.entites\\domain\\articlestags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|solutionrelative:articly.entites\\domain\\articlestags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD645A30-78A0-4279-93C9-2DC04F77A089}|Services\\Services.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD645A30-78A0-4279-93C9-2DC04F77A089}|Services\\Services.csproj|solutionrelative:services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.web\\controllers\\adminarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|solutionrelative:articly.web\\controllers\\adminarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.entites\\viewsmodel\\tags\\tagresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|solutionrelative:articly.entites\\viewsmodel\\tags\\tagresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.entites\\domain\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|solutionrelative:articly.entites\\domain\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.web\\views\\adminarticles\\addarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|solutionrelative:articly.web\\views\\adminarticles\\addarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.entites\\articledbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84D2475-8DF4-4271-8D59-B0917C6FB603}|Articly.Entites\\Articly.Entites.csproj|solutionrelative:articly.entites\\articledbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Articly.Web\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\appsettings.Development.json",
+              "RelativeToolTip": "Articly.Web\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-20T20:25:33.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArticlesTags.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\Domain\\ArticlesTags.cs",
+              "RelativeDocumentMoniker": "Articly.Entites\\Domain\\ArticlesTags.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\Domain\\ArticlesTags.cs",
+              "RelativeToolTip": "Articly.Entites\\Domain\\ArticlesTags.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T20:04:23.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TagResponse.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\ViewsModel\\Tags\\TagResponse.cs",
+              "RelativeDocumentMoniker": "Articly.Entites\\ViewsModel\\Tags\\TagResponse.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\ViewsModel\\Tags\\TagResponse.cs",
+              "RelativeToolTip": "Articly.Entites\\ViewsModel\\Tags\\TagResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:33:37.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Article.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\Domain\\Article.cs",
+              "RelativeDocumentMoniker": "Articly.Entites\\Domain\\Article.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\Domain\\Article.cs",
+              "RelativeToolTip": "Articly.Entites\\Domain\\Article.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwFYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:32:48.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArticleServices.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Services\\ArticleServices.cs",
+              "RelativeDocumentMoniker": "Services\\ArticleServices.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Services\\ArticleServices.cs",
+              "RelativeToolTip": "Services\\ArticleServices.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAcwDkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:29:57.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ArticleDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\ArticleDbContext.cs",
+              "RelativeDocumentMoniker": "Articly.Entites\\ArticleDbContext.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Entites\\ArticleDbContext.cs",
+              "RelativeToolTip": "Articly.Entites\\ArticleDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:17:36.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddArticle.cshtml",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Views\\AdminArticles\\AddArticle.cshtml",
+              "RelativeDocumentMoniker": "Articly.Web\\Views\\AdminArticles\\AddArticle.cshtml",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Views\\AdminArticles\\AddArticle.cshtml",
+              "RelativeToolTip": "Articly.Web\\Views\\AdminArticles\\AddArticle.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAiwEYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T16:12:32.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminArticlesController.cs",
+              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Controllers\\AdminArticlesController.cs",
+              "RelativeDocumentMoniker": "Articly.Web\\Controllers\\AdminArticlesController.cs",
+              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Controllers\\AdminArticlesController.cs",
+              "RelativeToolTip": "Articly.Web\\Controllers\\AdminArticlesController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T16:11:51.59Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 383,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

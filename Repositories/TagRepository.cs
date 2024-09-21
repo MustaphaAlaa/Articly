@@ -1,6 +1,6 @@
 ﻿using Repository_Interfaces;
 using Entities.Domain;
-using  DataAccessLayer;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositories;
