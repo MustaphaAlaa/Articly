@@ -36,17 +36,19 @@ public class AddArticleRequest
 
     public bool Visible { get; set; }
 
-    public IEnumerable<Tag> Tags { get; set; }
+    public List<Tag> Tags { get; set; }
     public List<string> SelectedTags
     {
         get; set;
     }
 
+
+
     public Article ToArticle()
     {
         return new Article()
         {
-            ArticleID = Guid.NewGuid(),
+
 
             Heading = this.Heading,
 

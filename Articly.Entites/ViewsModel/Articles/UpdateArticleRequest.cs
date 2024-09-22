@@ -1,13 +1,13 @@
 ﻿using Entities.Domain;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entities.ViewsModel.Articles ;
+namespace Entities.ViewsModel.Articles;
 
 
 public class UpdateArticleRequest
 {
     [Key]
-    public Guid ArticleID { get; set; }
+    public int ArticleID { get; set; }
 
     [Required]
     public string Heading { get; set; }

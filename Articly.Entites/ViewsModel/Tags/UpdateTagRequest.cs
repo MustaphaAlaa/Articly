@@ -5,7 +5,7 @@ namespace Entities.ViewsModel.Tags;
 public class UpdateTagRequest
 {
     [Key]
-    public Guid TagId { get; set; }
+    public int TagId { get; set; }
     [Required]
     [StringLength(30)]
     public string Name { get; set; }

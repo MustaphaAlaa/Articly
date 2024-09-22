@@ -8,7 +8,7 @@ namespace Entities.Domain;
 public class Tag
 {
     [Key]
-    public Guid TagID { get; set; }
+    public int TagId { get; set; }
     [Required]
     [StringLength(30)]
     public string Name { get; set; }
@@ -17,7 +17,7 @@ public class Tag
 
 
     public ICollection<Article> Articles { get; set; }
-    public ICollection<ArticlesTags> ArticlesTags { get; }
+    public ICollection<ArticleTag> ArticleTags { get; }
 
 
 

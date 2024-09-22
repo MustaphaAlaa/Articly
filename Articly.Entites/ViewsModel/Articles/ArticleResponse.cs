@@ -7,7 +7,7 @@ namespace Entities.ViewsModel.Articles;
 public class ArticleResponse
 {
     [Key]
-    public Guid ArticleID { get; set; }
+    public int ArticleID { get; set; }
 
 
     public string Heading { get; set; }

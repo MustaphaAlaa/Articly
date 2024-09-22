@@ -3,21 +3,24 @@ using Entities.Domain;
 using Entities.ViewsModel.Articles;
 using Entities.ViewsModel.Tags;
 using Microsoft.AspNetCore.Mvc;
+using Reposiory_Interfaces;
+using Repository_Interfaces;
 using ServicesInterfaces;
 
 namespace Articly.Web.Controllers
 {
-    public class AdminArticlesController : Controller
+    public class ArticlesController : Controller
     {
         private readonly IArticle _ArticleServices;
-        private readonly ILogger<AdminArticlesController> _logger;
+        private readonly ILogger<ArticlesController> _logger;
         private readonly ITag _tag;
-
-        public AdminArticlesController(IArticle articleServices, ILogger<AdminArticlesController> logger, ITag tag)
+        private readonly IArticleTag _articleTag;
+        public ArticlesController(IArticleTag articleTag, IArticle articleServices, ILogger<ArticlesController> logger, ITag tag)
         {
             _ArticleServices = articleServices;
             _logger = logger;
             _tag = tag;
+            _articleTag = articleTag;
         }
 
         public async Task<IActionResult> Index()
@@ -35,8 +38,14 @@ namespace Articly.Web.Controllers
 
 
             AddArticleRequest addArticleRequest = new AddArticleRequest();
+
             List<TagResponse> tagResponses = await _tag.GetAll();
+
             ViewBag.Tags = tagResponses;
+            //addArticleRequest.Tags = tagResponses.Select(t => t.ToTag()).ToList();
+            ViewBag.TagsOnArticle = new List<string>();
+
+            addArticleRequest.SelectedTags = new List<string>(tagResponses.Count);
 
             //addArticleRequest.Tags = tagResponses.Select(t => t.ToTag());
 
@@ -51,16 +60,18 @@ namespace Articly.Web.Controllers
 
             var ArticleResponses = await _ArticleServices.AddArticleAsync(article);
 
+            await _articleTag.AddFromAddArticleRequest(article, ArticleResponses.ArticleID);
+
 
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateArticle(Guid BlogId)
+        public async Task<IActionResult> UpdateArticle(int ArticleId)
         {
             _logger.LogInformation($"Reached To (HttpGet)UpdaetArticle() In {this.GetType().Name}");
 
-            var GetBlog = await _ArticleServices.GetArticleAsync(BlogId);
+            var GetBlog = await _ArticleServices.GetArticleAsync(ArticleId);
             if (GetBlog != null)
                 return View(GetBlog);
             else
@@ -77,7 +88,7 @@ namespace Articly.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteArticle(Guid ArticleId)
+        public async Task<IActionResult> DeleteArticle(int ArticleId)
         {
             _logger.LogInformation($"Reached To (HttpGet)DeleteArticle() In {this.GetType().Name}");
 
@@ -88,7 +99,7 @@ namespace Articly.Web.Controllers
                 return RedirectToAction("index");
         }
         [HttpPost]
-        public async Task<IActionResult> DeleteTheArticle(Guid ArticleId)
+        public async Task<IActionResult> DeleteTheArticle(int ArticleId)
         {
             _logger.LogInformation($"Reached To (HttpPost)DeleteArticle() In {this.GetType().Name}");
 

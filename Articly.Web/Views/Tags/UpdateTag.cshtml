@@ -2,11 +2,11 @@
 @model TagResponse;
 
 @{
-    ViewData["Title"] = "Update Tag";
+    ViewData["Title"] = $"Update {Model.DisplayName}";
 }
 
 
-<form method="post" asp-controller="admintags" asp-action="UpdateTheTag">
+<form method="post" asp-controller="tags" asp-action="UpdateTheTag">
     <input type="hidden" value="@Model.TagID" asp-for="TagID" />
     <div class=" form-group">
         <label for="TagName">Name</label>
@@ -18,6 +18,6 @@
     </div>
 
     <input type="submit" class="btn btn-success mb-3" />
-                    <a asp-action="deletetag" asp-controller="admintags" asp-route-TagId="@Model.TagID" class="btn btn-danger">Delete</a>
+                    <a asp-action="deletetag" asp-controller="tags" asp-route-TagId="@Model.TagID" class="btn btn-danger">Delete</a>
 
 </form>

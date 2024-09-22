@@ -9,11 +9,11 @@ public interface ITag
 {
     public Task<TagResponse?> AddTagAsync(AddTagRequest tag);
 
-    public Task<bool> DeleteTag(Guid id);
+    public Task<bool> DeleteTag(int id);
 
     public Task<TagResponse?> UpdateTag(UpdateTagRequest tag);
 
-    public Task<TagResponse?> GetTagById(Guid id);
+    public Task<TagResponse?> GetTagById(int id);
 
     public Task<TagResponse?> GetTagByName(string name);
 

@@ -15,9 +15,9 @@ namespace Repository_Interfaces
 
         public Task<Article?> UpdateAsync(Article article);
 
-        public Task<bool> DeleteAsync(Guid Id);
+        public Task<bool> DeleteAsync(int Id);
 
-        public Task<Article?> GetByIdAsync(Guid Id);
+        public Task<Article?> GetByIdAsync(int Id);
 
         public Task<List<Article>> GetAllAsync();
     }

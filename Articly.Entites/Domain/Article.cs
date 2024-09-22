@@ -9,7 +9,7 @@ public class Article
 {
 
     [Key]
-    public Guid ArticleID { get; set; } = Guid.NewGuid();
+    public int ArticleId { get; set; }
 
     [Required]
     public string Heading { get; set; }
@@ -36,7 +36,7 @@ public class Article
 
     public ICollection<Tag> Tags { get; set; }
 
-    public ICollection<ArticlesTags> Blogs { get; set; }
+    public ICollection<ArticleTag> ArticleTag { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public static class Extensions
 
         return new ArticleResponse()
         {
-            ArticleID = article.ArticleID,
+            ArticleID = article.ArticleId,
 
 
             Heading = article.Heading,
@@ -80,13 +80,13 @@ public static class Extensions
 
     public static TagResponse ToResponse(this Tag tag)
     {
-        return new TagResponse() { TagID = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
+        return new TagResponse() { TagID = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName };
 
     }
 
     public static Tag ToTag(this TagResponse tag)
     {
-        return new Tag() { TagID = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
+        return new Tag() { TagId = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
 
     }
 

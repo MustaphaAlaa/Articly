@@ -11,7 +11,7 @@ namespace Entities.ViewsModel.Tags
     public class TagResponse
     {
 
-        public Guid TagID { get; set; }
+        public int TagID { get; set; }
 
         public string Name { get; set; }
 

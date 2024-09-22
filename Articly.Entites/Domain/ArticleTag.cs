@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Entities.Domain
 {
-    public class ArticlesTags
+    public class ArticleTag
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; }
 
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; }
 
-        public Guid TagID { get; set; }
-        public Guid ArticleID { get; set; }
+        public int TagID { get; set; }
+        public int ArticleID { get; set; }
 
 
         public Tag Tag { get; set; }

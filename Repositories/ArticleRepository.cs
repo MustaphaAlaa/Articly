@@ -35,7 +35,7 @@ namespace Repositories
             return article;
         }
 
-        public async Task<bool> DeleteAsync(Guid Id)
+        public async Task<bool> DeleteAsync(int Id)
         {
 
             Article? article = await this.GetByIdAsync(Id);
@@ -43,14 +43,14 @@ namespace Repositories
             if (article == null)
                 return false;
 
-            _db.Remove(article);
+            _db.Articles.Remove(article);
             int deleted = await _db.SaveChangesAsync();
             return deleted > 0;
         }
 
-        public async Task<Article?> GetByIdAsync(Guid Id)
+        public async Task<Article?> GetByIdAsync(int Id)
         {
-            return await _db.Articles.FirstOrDefaultAsync(a => a.ArticleID == Id);
+            return await _db.Articles.FirstOrDefaultAsync(a => a.ArticleId == Id);
         }
 
         public async Task<List<Article>> GetAllAsync()

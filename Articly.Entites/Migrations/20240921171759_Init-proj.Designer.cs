@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Articly.Entites.Migrations
 {
     [DbContext(typeof(ArticleDbContext))]
-    [Migration("20240920160531_Init-DataBase")]
-    partial class InitDataBase
+    [Migration("20240921171759_Init-proj")]
+    partial class Initproj
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,77 +25,68 @@ namespace Articly.Entites.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ArticleTag", b =>
-                {
-                    b.Property<Guid>("ArticlesArticleID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TagsTagID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ArticlesArticleID", "TagsTagID");
-
-                    b.HasIndex("TagsTagID");
-
-                    b.ToTable("ArticleTag");
-                });
-
             modelBuilder.Entity("Entities.Domain.Article", b =>
                 {
-                    b.Property<Guid>("ArticleID")
+                    b.Property<int>("ArticleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArticleId"));
 
                     b.Property<string>("Author")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Contnet")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("FeaturedImaageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Heading")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("PageTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ShortDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(70)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
 
-                    b.HasKey("ArticleID");
+                    b.HasKey("ArticleId");
 
-                    b.ToTable("Articles");
+                    b.ToTable("Articles", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Domain.ArticlesTags", b =>
+            modelBuilder.Entity("Entities.Domain.ArticleTag", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ArticleID")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ArticleID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("TagID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("TagID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -106,54 +97,42 @@ namespace Articly.Entites.Migrations
 
                     b.HasIndex("TagID");
 
-                    b.ToTable("ArticlesTags");
+                    b.ToTable("ArticleTag", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Domain.Tag", b =>
                 {
-                    b.Property<Guid>("TagID")
+                    b.Property<int>("TagId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR");
 
-                    b.HasKey("TagID");
+                    b.HasKey("TagId");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
-            modelBuilder.Entity("ArticleTag", b =>
-                {
-                    b.HasOne("Entities.Domain.Article", null)
-                        .WithMany()
-                        .HasForeignKey("ArticlesArticleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Domain.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsTagID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Entities.Domain.ArticlesTags", b =>
+            modelBuilder.Entity("Entities.Domain.ArticleTag", b =>
                 {
                     b.HasOne("Entities.Domain.Article", "Article")
-                        .WithMany("Blogs")
+                        .WithMany("ArticleTag")
                         .HasForeignKey("ArticleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Entities.Domain.Tag", "Tag")
-                        .WithMany("ArticlesTags")
+                        .WithMany("ArticleTags")
                         .HasForeignKey("TagID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -165,12 +144,12 @@ namespace Articly.Entites.Migrations
 
             modelBuilder.Entity("Entities.Domain.Article", b =>
                 {
-                    b.Navigation("Blogs");
+                    b.Navigation("ArticleTag");
                 });
 
             modelBuilder.Entity("Entities.Domain.Tag", b =>
                 {
-                    b.Navigation("ArticlesTags");
+                    b.Navigation("ArticleTags");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,7 +8,7 @@ public class ArticleDbContext : DbContext
     public DbSet<Article> Articles { get; set; }
     public DbSet<Tag> Tags { get; set; }
 
-    //public DbSet<ArticlesTags> ArticlesTags { get; set; }
+    public DbSet<ArticleTag> ArticleTag { get; set; }
 
     public ArticleDbContext(DbContextOptions<ArticleDbContext> options) : base(options) { }
 
@@ -17,6 +17,7 @@ public class ArticleDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ArticleDbContext).Assembly);
 
     }
 

@@ -32,7 +32,7 @@ public class TagRepository : ITagRepository
         return tag;
     }
 
-    public async Task<bool> DeleteAsync(Guid Id)
+    public async Task<bool> DeleteAsync(int Id)
     {
 
         Tag? tag = await this.GetByIdAsync(Id);
@@ -45,9 +45,9 @@ public class TagRepository : ITagRepository
         return deleted > 0;
     }
 
-    public async Task<Tag?> GetByIdAsync(Guid Id)
+    public async Task<Tag?> GetByIdAsync(int Id)
     {
-        return await _db.Tags.FirstOrDefaultAsync(T => T.TagID == Id);
+        return await _db.Tags.FirstOrDefaultAsync(T => T.TagId == Id);
     }
 
     public async Task<List<Tag>> GetAllAsync()

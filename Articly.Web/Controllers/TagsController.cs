@@ -8,11 +8,11 @@ using ServicesInterfaces;
 
 namespace Articly.Web.Controllers;
 
-public class AdminTagsController : Controller
+public class TagsController : Controller
 {
     private readonly ITag _TagServices;
-    private readonly ILogger<AdminTagsController> _Logger;
-    public AdminTagsController(ITag tagServices, ILogger<AdminTagsController> logger)
+    private readonly ILogger<TagsController> _Logger;
+    public TagsController(ITag tagServices, ILogger<TagsController> logger)
     {
         _Logger = logger;
         _TagServices = tagServices;
@@ -45,7 +45,7 @@ public class AdminTagsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> UpdateTag(Guid TagId)
+    public async Task<IActionResult> UpdateTag(int TagId)
     {
         _Logger.LogInformation($"Reached To (HttpGet)UpdaetTag() In {this.GetType().Name}");
 
@@ -66,7 +66,7 @@ public class AdminTagsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> DeleteTag(Guid TagId)
+    public async Task<IActionResult> DeleteTag(int TagId)
     {
         _Logger.LogInformation($"Reached To (HttpGet)DeletetTag() In {this.GetType().Name}");
 
@@ -77,7 +77,7 @@ public class AdminTagsController : Controller
             return RedirectToAction("index");
     }
     [HttpPost]
-    public async Task<IActionResult> DeleteTheTag(Guid TagId)
+    public async Task<IActionResult> DeleteTheTag(int TagId)
     {
         _Logger.LogInformation($"Reached To (HttpPost)DeleteTag() In {this.GetType().Name}");
 

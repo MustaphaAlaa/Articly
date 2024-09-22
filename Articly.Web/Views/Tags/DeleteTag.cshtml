@@ -1,11 +1,11 @@
 @model TagResponse;
 
 @{
-    ViewData["Title"] = "Delete Tag";
+    ViewData["Title"] = Model.DisplayName;
 }
 
 
-<form method="post" asp-controller="admintags" asp-action="DeleteTheTag">
+<form method="post" asp-controller="tags" asp-action="DeleteTheTag">
     <input type="hidden" value="@Model.TagID" asp-for="TagID" />
     <div class=" form-group">
         <label for="TagName">Name</label>

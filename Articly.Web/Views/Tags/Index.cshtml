@@ -7,7 +7,7 @@
 <h1 class="h1 text-center" > Tags List</h1>
     
 
-<a asp-controller="admintags" asp-action="Add" class="btn btn-primary m-2">Add Tag</a>
+<a asp-controller="tags" asp-action="AddTag" class="btn btn-primary m-2">Add Tag</a>
 
 <table class="table table-striped table-bordered m-2">
     <thead>
@@ -24,7 +24,7 @@
                     <td>@tag.Name</td>
                     <td>@tag.DisplayName</td>
                     <td>
-                        <a asp-action="updatetag" asp-controller="admintags" asp-route-TagId = "@tag.TagID"    class="btn btn-warning">Update</a>
+                        <a asp-action="updatetag" asp-controller="tags" asp-route-TagId = "@tag.TagID"    class="btn btn-warning">Update</a>
                 </td>
                 </tr>
             }

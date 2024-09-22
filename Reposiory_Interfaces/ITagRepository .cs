@@ -10,9 +10,9 @@ public interface ITagRepository
 
     public Task<Tag> UpdateAsync(Tag tag);
 
-    public Task<bool> DeleteAsync(Guid Id);
+    public Task<bool> DeleteAsync(int Id);
 
-    public Task<Tag?> GetByIdAsync(Guid Id);
+    public Task<Tag?> GetByIdAsync(int Id);
 
     public Task<List<Tag>> GetAllAsync();
 

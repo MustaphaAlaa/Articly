@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Bloggie.Services.Helper;
 using Entities.ViewsModel.Tags;
 using Entities.ViewsModel.Tags;
- 
+
 namespace Articly_Services;
 
 public class TagService : ITag
@@ -42,7 +42,7 @@ public class TagService : ITag
         }
 
         Tag tag = TagRequest.ToTag();
-        tag.TagID = Guid.NewGuid();
+
 
         await _tagRepository.AddAsync(tag);
 
@@ -50,10 +50,10 @@ public class TagService : ITag
         return tag.ToResponse();
     }
 
-    public async Task<bool> DeleteTag(Guid id)
+    public async Task<bool> DeleteTag(int id)
     {
         _logger.LogInformation($"Reached To DeleteTag() In {this.GetType().Name}");
-        if (id == Guid.Empty)
+        if (id <= 0)
             return false;
 
         if (this.GetTagById(id).Result == null)
@@ -62,7 +62,7 @@ public class TagService : ITag
         return await _tagRepository.DeleteAsync(id);
     }
 
-    public async Task<TagResponse?> GetTagById(Guid id)
+    public async Task<TagResponse?> GetTagById(int id)
     {
         _logger.LogInformation($"Reached To GetTagById() In {this.GetType().Name}");
         var tag = await _tagRepository.GetByIdAsync(id);

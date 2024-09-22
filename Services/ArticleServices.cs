@@ -43,32 +43,21 @@ namespace Articly_Services
                 return null;
             }
 
-            List<Tag> Tags = new();
 
-            foreach (string tagID in articleRequest.SelectedTags)
-            {
-                var t = await _tag.GetTagById(Guid.Parse(tagID));
-
-                Tags.Add(t.ToTag());
-            }
 
             Article article = articleRequest.ToArticle();
-            //Blog.
-            article.Tags = Tags;
             article.PublishDate = DateTime.Now;
-
-            article.ArticleID = Guid.NewGuid();
 
             await _articleRepository.AddAsync(article);
 
 
-            return article.ToResponse();
+            return article?.ToResponse();
         }
 
-        public async Task<bool> DeleteArticleAsync(Guid id)
+        public async Task<bool> DeleteArticleAsync(int id)
         {
             _logger.LogInformation($"Reached To DeleteBlogAsync() In {this.GetType().Name}");
-            if (id == Guid.Empty)
+            if (id <= 0)
                 return false;
 
             if (this.GetArticleAsync(id).Result == null)
@@ -77,7 +66,7 @@ namespace Articly_Services
             return await _articleRepository.DeleteAsync(id);
         }
 
-        public async Task<ArticleResponse?> GetArticleAsync(Guid id)
+        public async Task<ArticleResponse?> GetArticleAsync(int id)
         {
             _logger.LogInformation($"Reached To GetBlogById() In {this.GetType().Name}");
             var Blog = await _articleRepository.GetByIdAsync(id);
