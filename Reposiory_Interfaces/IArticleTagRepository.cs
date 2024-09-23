@@ -20,5 +20,8 @@ namespace Reposiory_Interfaces
 
         public Task<List<ArticleTag>> GetAllAsync();
 
+        public Task<List<ArticleTag>> GetAllTagsInArticle(int ArticleId);
+        public Task<List<ArticleTag>> GetAllArticlesInTag(int TagId);
+
     }
 }

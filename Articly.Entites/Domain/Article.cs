@@ -71,8 +71,10 @@ public static class Extensions
 
             Author = article.Author,
 
-            Visible = article.Visible
-        };
+            Visible = article.Visible,
+            
+            Tags = article.Tags
+        }; 
     }
 
 

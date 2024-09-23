@@ -19,6 +19,8 @@ public class ArticleDbContext : DbContext
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ArticleDbContext).Assembly);
 
+        modelBuilder.Entity<Tag>().HasIndex(tag => tag.DisplayName).IsUnique();
+
     }
 
 }

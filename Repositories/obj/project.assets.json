@@ -2791,11 +2791,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "c:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\Repositories.csproj",
+      "projectPath": "c:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\anama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\obj\\",
+      "outputPath": "c:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\anama\\AppData\\Roaming\\NuGet\\NuGet.Config",

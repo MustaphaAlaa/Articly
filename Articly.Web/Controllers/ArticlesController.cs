@@ -1,4 +1,5 @@
-﻿using Articly_Services;
+﻿using System.Security.Cryptography.X509Certificates;
+using Articly_Services;
 using Entities.Domain;
 using Entities.ViewsModel.Articles;
 using Entities.ViewsModel.Tags;
@@ -15,8 +16,11 @@ namespace Articly.Web.Controllers
         private readonly ILogger<ArticlesController> _logger;
         private readonly ITag _tag;
         private readonly IArticleTag _articleTag;
-        public ArticlesController(IArticleTag articleTag, IArticle articleServices, ILogger<ArticlesController> logger, ITag tag)
+
+      private readonly  IArticleTagRepository _artTagRepo;
+        public ArticlesController(IArticleTagRepository ar, IArticleTag articleTag, IArticle articleServices, ILogger<ArticlesController> logger, ITag tag)
         {
+             _artTagRepo = ar;
             _ArticleServices = articleServices;
             _logger = logger;
             _tag = tag;
@@ -27,8 +31,8 @@ namespace Articly.Web.Controllers
         {
             _logger.LogInformation($"Reached To Index() In {this.GetType().Name}");
 
-            var Blogs = await _ArticleServices.GetAllAsync();
-            return View(Blogs);
+            var Articles = await _ArticleServices.GetAllAsync();
+            return View(Articles);
         }
 
         [HttpGet]
@@ -107,5 +111,17 @@ namespace Articly.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetArticle (int id)
+        {
+               ArticleResponse?  vr =   await _ArticleServices.GetArticleAsync(   id);
+            //    var at = await _artTagRepo.GetAllTagsInArticle(id);
+               
+                int o = 1; 
+            return View("Article",vr);
+        }
+
     }
 }

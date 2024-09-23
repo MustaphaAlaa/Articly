@@ -1,0 +1,33 @@
+@model ArticleResponse
+
+@{
+    ViewData["Title"] = Model != null ? Model.PageTitle : "NO PAGE";
+}
+
+<h1 class="m-5 text-center h1  text-secondary ">@Model.Heading</h1>
+    <span class="text-muted">@Model.PublishDate</span>
+
+
+<div class="container m-3">
+     
+    <div class="d-flex justify-content-between mb-4">
+            <p>
+        Written By: <span class="font-weight-bold">  @Model.Author</span>
+</p>
+    <p>
+        @foreach(Tag tag in Model.Tags)
+        {
+             <span class="badge bg-secondary">@tag.DisplayName</span> 
+        }
+    </p>
+    </div>  
+
+    <p>
+        @Model.Contnet
+    </p>
+     
+</div>
+
+
+ 
+

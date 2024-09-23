@@ -31,7 +31,11 @@ public class TagService : ITag
             if (TagRequest == null)
                 throw new ArgumentNullException(nameof(TagRequest));
 
+            List<Tag> tagResponses = await _tagRepository.GetAllAsync();
+            TagRequest.DisplayName = TagRequest.DisplayName.ToUpper();
 
+            if (tagResponses.FirstOrDefault(t => t.DisplayName == TagRequest.DisplayName) != null)
+                throw new Exception("This Tag Is Already Added");
 
             ModelValidate.ModelValidation(TagRequest);
         }
@@ -40,7 +44,6 @@ public class TagService : ITag
             _logger.LogError(exception.Message);
             return null;
         }
-
         Tag tag = TagRequest.ToTag();
 
 
@@ -102,6 +105,7 @@ public class TagService : ITag
 
         UpdatedTag.Name = tag.Name;
         UpdatedTag.DisplayName = tag.DisplayName;
+        tag.DisplayName = tag.DisplayName.ToUpper();
 
         Tag TagIsUpdated = await _tagRepository.UpdateAsync(UpdatedTag);
 

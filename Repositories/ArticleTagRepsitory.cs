@@ -49,7 +49,7 @@ namespace Repositories
 
         public async Task<ArticleTag?> GetByIdAsync(int Id)
         {
-            return await _db.ArticleTag.FirstOrDefaultAsync(x => x.Id == Id);
+            return await _db.ArticleTag.Include(at=> at.Article).Include(at=> at.Tag ).FirstOrDefaultAsync(x => x.Id == Id);
         }
 
         public async Task<List<ArticleTag>> GetAllAsync()
@@ -57,5 +57,16 @@ namespace Repositories
             return await _db.ArticleTag.Select(a => a).ToListAsync();
         }
 
+        public Task<List<ArticleTag>> GetAllTagsInArticle(int ArticleId)
+        {
+             return  _db.ArticleTag.Include(at=> at.Article).Include(at=> at.Tag ).Where(artT => artT.ArticleID == ArticleId).ToListAsync();
+
+        }
+
+        public Task<List<ArticleTag>> GetAllArticlesInTag(int TagId)
+        {
+             return  _db.ArticleTag.Include(at=> at.Article).Include(at=> at.Tag ).Where(artT => artT.TagID == TagId).ToListAsync();
+
+        }
     }
 }

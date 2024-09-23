@@ -35,15 +35,16 @@ namespace Services
             List<TagResponse?> tagrepos = new();
             TagResponse? tagResponse;
 
-
-            foreach (var tag in addArticleRequest.SelectedTags)
+            if (addArticleRequest.SelectedTags != null)
             {
+                foreach (var tag in addArticleRequest.SelectedTags)
+                {
 
-                tagResponse = await _tag.GetTagById(int.Parse(tag));
+                    tagResponse = await _tag.GetTagById(int.Parse(tag));
 
-                tagrepos.Add(tagResponse);
+                    tagrepos.Add(tagResponse);
+                }
             }
-
             List<Tag> tags = tagrepos.Select(t => t.ToTag()).ToList();
 
             foreach (var t in tags)

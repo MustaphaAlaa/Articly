@@ -1,19 +1,46 @@
 ﻿@model List<ArticleResponse>
 
-<h1 class="m-3">All Blogs</h1>
+<h1 class="m-3 mt-4">All Articles</h1>
 
 
 
-<div class="container border rounded border-dark-subtle">
-    @foreach(ArticleResponse art in Model)
+<div class="container  mt-5">
 
+    <table class="table table-bordered table-striped  ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Heading</th>
+                <th>Tags</th>
+            </tr>
 
-    {
-        <div>
+        </thead>
+        <tbody>
+            @foreach (ArticleResponse art in Model)
+            {
+                <tr>
+                    <td>@art.ArticleID</td>
+                    <td> <a asp-action="GetArticle" asp-controller="Articles" asp-route-id="@art.ArticleID"
+                            class="link-primary">
 
-            Het
-        </div>
+                            @art.Heading
 
-    }
-    ksnfklnsdfnsdfnsdlknfosdn
+                        </a></td>
+                    <td>
+                        @if(art.Tags == null || art.Tags.Count == 0)
+                        {
+                            <span>No Tags In This Article</span>
+                        }else { 
+                            @foreach (Tag tag in art.Tags)
+                            {
+                                <span class="badge bg-success">@tag?.DisplayName</span>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
 </div>

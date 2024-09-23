@@ -21,6 +21,8 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article>
             .WithMany(a => a.Articles)
             .UsingEntity<ArticleTag>();
 
+
+
         //Columns
         builder.Property(a => a.PageTitle)
                 .HasColumnType("VARCHAR")

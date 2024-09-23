@@ -17,10 +17,14 @@ namespace Articly.Entites.Cong
             //    .UsingEntity<ArticleTag>();
 
             //Columns
-          builder.Property(a => a.Name)
-                    .HasColumnType("VARCHAR")
-                    .HasMaxLength(250)
-                    .IsRequired(true);
+            builder.Property(a => a.Name)
+
+                      .HasColumnType("VARCHAR")
+                      .HasMaxLength(250)
+
+                      .IsRequired(true);
+
+
 
             builder.Property(a => a.DisplayName)
                     .HasColumnType("VARCHAR")
@@ -32,5 +36,5 @@ namespace Articly.Entites.Cong
 
 
         }
-    } 
+    }
 }
