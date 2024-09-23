@@ -47,7 +47,7 @@ public class TagRepository : ITagRepository
 
     public async Task<Tag?> GetByIdAsync(int Id)
     {
-        return await _db.Tags.FirstOrDefaultAsync(T => T.TagId == Id);
+        return await _db.Tags.Include(t => t.Articles).FirstOrDefaultAsync(T => T.TagId == Id);
     }
 
     public async Task<List<Tag>> GetAllAsync()

@@ -86,4 +86,21 @@ public class TagsController : Controller
         return RedirectToAction("Index");
     }
 
+
+    [HttpGet]
+    public async Task<IActionResult> GetTag(int id)
+    {
+        _Logger.LogInformation($"Reached To GetTag(int id) In {this.GetType().Name}");
+
+        if (id <= 0)
+        {
+            _Logger.LogError($"Invalid Id, id: {id}");
+            return RedirectToAction("Index");
+        }
+        var tag = await _TagServices.GetTagById(id);
+
+
+        return View(tag);
+    }
+
 }

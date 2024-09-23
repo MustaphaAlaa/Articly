@@ -22,7 +22,9 @@
             {
                 <tr>
                     <td>@tag.Name</td>
-                    <td>@tag.DisplayName</td>
+                    <td>
+                    <a asp-action="GetTag" asp-controller="tags" asp-route-id="@tag.TagID" class="stretched-link link-primary">@tag.DisplayName</a>
+                      </td>
                     <td>
                         <a asp-action="updatetag" asp-controller="tags" asp-route-TagId = "@tag.TagID"    class="btn btn-warning">Update</a>
                 </td>

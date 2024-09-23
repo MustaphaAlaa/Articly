@@ -72,9 +72,9 @@ public static class Extensions
             Author = article.Author,
 
             Visible = article.Visible,
-            
+
             Tags = article.Tags
-        }; 
+        };
     }
 
 
@@ -82,13 +82,13 @@ public static class Extensions
 
     public static TagResponse ToResponse(this Tag tag)
     {
-        return new TagResponse() { TagID = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName };
+        return new TagResponse() { TagID = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
 
     }
 
     public static Tag ToTag(this TagResponse tag)
     {
-        return new Tag() { TagId = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName };
+        return new Tag() { TagId = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
 
     }
 

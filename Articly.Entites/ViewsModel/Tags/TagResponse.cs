@@ -17,6 +17,8 @@ namespace Entities.ViewsModel.Tags
 
         public string DisplayName { get; set; }
 
+        public ICollection<Article> Articles { get; set; }
+
         //public Tag ToTag()
         //{
         //    return new Tag()

@@ -1,0 +1,30 @@
+@model TagResponse
+
+
+<h1 class="h1 text-center m-5">@Model.Name</h1>
+<h4>Display Name:<span class="badge bg-warning m-4"> @Model.DisplayName</span></h4>
+
+@if(Model.Articles == null || Model.Articles.Count == 0)
+{
+    <p class="text-center m-3">No articles for @Model.DisplayName yet</p>
+}
+else { 
+    <table class="m-4 table table-bordered table-striped text-center">
+
+        <thead>
+            <tr>
+                <th>Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach(Article article in Model.Articles)
+            {
+                <tr>
+                    <td> <a class="link-primary" asp-action="GetArticle" asp-controller="Articles" asp-route-id="@article.ArticleId"> @article.Heading</a></td>
+                </tr>    
+            }
+        </tbody>
+
+    </table>
+}

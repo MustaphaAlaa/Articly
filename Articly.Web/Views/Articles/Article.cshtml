@@ -17,7 +17,7 @@
     <p>
         @foreach(Tag tag in Model.Tags)
         {
-             <span class="badge bg-secondary">@tag.DisplayName</span> 
+             <a asp-action="GetTag" asp-controller="Tags" asp-route-id ="@tag.TagId" class="badge bg-secondary">@tag.DisplayName</a> 
         }
     </p>
     </div>  
