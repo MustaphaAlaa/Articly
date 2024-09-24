@@ -22,8 +22,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcQWRkQXJ0aWNsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/Articles/Article.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcQXJ0aWNsZS5jc2h0bWw=
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/Articles/EditArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcRWRpdEFydGljbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/Articles/GetArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcR2V0QXJ0aWNsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anama/OneDrive/Desktop/Articles/Articly.Web/Views/Articles/Index.cshtml]

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Articly.Entites.ViewsModel.Articles;
 namespace Articly_Services
 {
     public class ArticleServices : IArticle
@@ -68,23 +68,29 @@ namespace Articly_Services
 
         public async Task<ArticleResponse?> GetArticleAsync(int id)
         {
-            _logger.LogInformation($"Reached To GetBlogById() In {this.GetType().Name}");
-            var Blog = await _articleRepository.GetByIdAsync(id);
-            return Blog.ToResponse();
+            _logger.LogInformation($"Reached To GetArticleById() In {this.GetType().Name}");
+            var article = await _articleRepository.GetByIdAsync(id);
+
+            if (article == null)
+                return null;
+
+            return article.ToResponse();
         }
 
-
-        public async Task<ArticleResponse?> UpdateArticleAsync(UpdateArticleRequest article)
+        public async Task<ArticleResponse?> EditArticleAsync(UpdateArticleRequest article)
         {
-            Article? UpdatedArticle;
+            Article? UpdatedArticle = new();
             try
             {
                 if (article == null)
                     throw new ArgumentNullException(nameof(article));
 
-                UpdatedArticle = await _articleRepository.GetByIdAsync(article.ArticleID);
+                UpdatedArticle = await _articleRepository.GetByIdAsync(article.ArticleId);
+
+                //var Found = _articleRepository.GetAllAsync().Result.Exists(a => a.ArticleId == article.ArticleId);
 
                 if (UpdatedArticle == null)
+                    //if (!Found)
                     throw new Exception("Can't Find This ID");
 
                 ModelValidate.ModelValidation(article);
@@ -97,10 +103,30 @@ namespace Articly_Services
 
 
 
-            Article? ArticleIsUpdated = await _articleRepository.UpdateAsync(UpdatedArticle);
+            //UpdatedArticle.ShortDescription = article.ShortDescription;
+            //UpdatedArticle.Contnet = article.Contnet;
+            //UpdatedArticle.FeaturedImaageUrl = article.FeaturedImaageUrl;
+            //UpdatedArticle.Heading = article.Heading;
+            //UpdatedArticle.PageTitle = article.PageTitle;
+            //UpdatedArticle.Visible = article.Visible;
+            UpdatedArticle.ArticleId = article.ArticleId;
+            UpdatedArticle.ShortDescription = article.ShortDescription;
+            UpdatedArticle.Contnet = article.Contnet;
+            UpdatedArticle.FeaturedImaageUrl = article.FeaturedImaageUrl;
+            UpdatedArticle.Heading = article.Heading;
+            UpdatedArticle.PageTitle = article.PageTitle;
+            UpdatedArticle.Visible = article.Visible;
+            UpdatedArticle.Tags = article.Tags;
 
-            return ArticleIsUpdated?.ToResponse();
+
+            int Updated = await _articleRepository.EditAsync(UpdatedArticle);
+
+            if (Updated > 0)
+                return UpdatedArticle.ToResponse();
+            else
+                return null;
         }
+
         public async Task<List<ArticleResponse>> GetAllAsync()
         {
             _logger.LogInformation("Reached To GetAll In BlogServices");

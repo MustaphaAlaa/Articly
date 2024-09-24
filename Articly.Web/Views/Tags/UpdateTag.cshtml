@@ -7,7 +7,7 @@
 
 
 <form method="post" asp-controller="tags" asp-action="UpdateTheTag">
-    <input type="hidden" value="@Model.TagID" asp-for="TagID" />
+    <input type="hidden" value="@Model.TagId" asp-for="TagId" />
     <div class=" form-group">
         <label for="TagName">Name</label>
         <input asp-for="Name" id="TagName" class="form-control" type="text" value="@Model.Name"/>
@@ -18,6 +18,6 @@
     </div>
 
     <input type="submit" class="btn btn-success mb-3" />
-                    <a asp-action="deletetag" asp-controller="tags" asp-route-TagId="@Model.TagID" class="btn btn-danger">Delete</a>
+                    <a asp-action="deletetag" asp-controller="tags" asp-route-TagId="@Model.TagId" class="btn btn-danger">Delete</a>
 
 </form>

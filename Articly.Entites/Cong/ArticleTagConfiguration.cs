@@ -10,15 +10,7 @@ public class ArticleTagConfiguration : IEntityTypeConfiguration<ArticleTag>
     {
         builder.HasKey(article => article.Id);
 
-        //Relation Many-To-Many
 
-        builder.Property(a => a.UpdatedAt)
-           .HasColumnType("datetime2")
-           .IsRequired(true);
-
-        builder.Property(a => a.CreatedAt)
-                .HasColumnType("datetime2")
-                .IsRequired(true);
 
 
         builder.ToTable("ArticleTag");

@@ -45,50 +45,17 @@ public class Article
 
 public static class Extensions
 {
-    public static ArticleResponse ToResponse(this Article article)
-
-    {
-
-        return new ArticleResponse()
-        {
-            ArticleID = article.ArticleId,
-
-
-            Heading = article.Heading,
-
-
-            PageTitle = article.PageTitle,
-
-
-            Contnet = article.Contnet,
-
-            ShortDescription = article.ShortDescription,
-
-
-            FeaturedImaageUrl = article.FeaturedImaageUrl,
-
-            PublishDate = article.PublishDate,
-
-            Author = article.Author,
-
-            Visible = article.Visible,
-
-            Tags = article.Tags
-        };
-    }
-
-
 
 
     public static TagResponse ToResponse(this Tag tag)
     {
-        return new TagResponse() { TagID = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
+        return new TagResponse() { TagId = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
 
     }
 
     public static Tag ToTag(this TagResponse tag)
     {
-        return new Tag() { TagId = tag.TagID, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
+        return new Tag() { TagId = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
 
     }
 

@@ -13,7 +13,7 @@ namespace Repository_Interfaces
     {
         public Task<Article> AddAsync(Article article);
 
-        public Task<Article?> UpdateAsync(Article article);
+        public Task<int> EditAsync(Article article);
 
         public Task<bool> DeleteAsync(int Id);
 

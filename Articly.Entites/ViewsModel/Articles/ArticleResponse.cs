@@ -7,7 +7,7 @@ namespace Entities.ViewsModel.Articles;
 public class ArticleResponse
 {
     [Key]
-    public int ArticleID { get; set; }
+    public int ArticleId { get; set; }
 
 
     public string Heading { get; set; }
@@ -31,7 +31,8 @@ public class ArticleResponse
     public bool Visible { get; set; }
 
     // public List<Tag> Tags { get; set; }
+    public List<string> SelectedTags { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+    public ICollection<Tag> Tags { get; set; }
 
 }

@@ -12,6 +12,7 @@
                 <th>Id</th>
                 <th>Heading</th>
                 <th>Tags</th>
+                <th>Options</th>
             </tr>
 
         </thead>
@@ -19,8 +20,8 @@
             @foreach (ArticleResponse art in Model)
             {
                 <tr>
-                    <td>@art.ArticleID</td>
-                    <td> <a asp-action="GetArticle" asp-controller="Articles" asp-route-id="@art.ArticleID"
+                    <td>@art.ArticleId</td>
+                    <td> <a asp-action="GetArticle" asp-controller="Articles" asp-route-id="@art.ArticleId"
                             class="link-primary">
 
                             @art.Heading
@@ -37,6 +38,8 @@
                             }
                         }
                     </td>
+
+                    <td><a class="link-primary" asp-action="EditArticle" asp-controller="Articles" asp-route-id = "@art.ArticleId" > Edit</a></td>
                 </tr>
             }
 

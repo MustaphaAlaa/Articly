@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using Articly.Entites.ViewsModel.Articles;
 using Articly_Services;
 using Entities.Domain;
 using Entities.ViewsModel.Articles;
@@ -17,10 +18,10 @@ namespace Articly.Web.Controllers
         private readonly ITag _tag;
         private readonly IArticleTag _articleTag;
 
-      private readonly  IArticleTagRepository _artTagRepo;
+        private readonly IArticleTagRepository _artTagRepo;
         public ArticlesController(IArticleTagRepository ar, IArticleTag articleTag, IArticle articleServices, ILogger<ArticlesController> logger, ITag tag)
         {
-             _artTagRepo = ar;
+            _artTagRepo = ar;
             _ArticleServices = articleServices;
             _logger = logger;
             _tag = tag;
@@ -64,30 +65,66 @@ namespace Articly.Web.Controllers
 
             var ArticleResponses = await _ArticleServices.AddArticleAsync(article);
 
-            await _articleTag.AddFromAddArticleRequest(article, ArticleResponses.ArticleID);
+            await _articleTag.AddFromAddArticleRequest(article, ArticleResponses.ArticleId);
 
 
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateArticle(int ArticleId)
+        public async Task<IActionResult> EditArticle(int id)
         {
             _logger.LogInformation($"Reached To (HttpGet)UpdaetArticle() In {this.GetType().Name}");
 
-            var GetBlog = await _ArticleServices.GetArticleAsync(ArticleId);
-            if (GetBlog != null)
-                return View(GetBlog);
+            var GetArticle = await _ArticleServices.GetArticleAsync(id);
+
+            ViewBag.SelectedTags = new List<string>();
+
+            List<TagResponse> tagResponses = await _tag.GetAll();
+
+            ViewBag.Tags = tagResponses.Select(t => t.ToTag()).ToList();
+
+            ViewBag.TagsOnArticle = new List<string>();
+
+            foreach (var tag in GetArticle.Tags)
+                ViewBag.SelectedTags.Add(tag.TagId.ToString());
+
+            if (GetArticle != null)
+                return View(GetArticle.ToUpdateArticleRequest());
             else
                 return RedirectToAction("index");
         }
+
         [HttpPost]
-        public async Task<IActionResult> UpdateTheArticle(UpdateArticleRequest article)
+        public async Task<IActionResult> EditTheArticle(UpdateArticleRequest article)
         {
             _logger.LogInformation($"Reached To (HttpPost)UpdateArticle() In {this.GetType().Name}");
 
-            await _ArticleServices.UpdateArticleAsync(article);
+            List<Tag> tag = new List<Tag>();
 
+
+            foreach (var t in article.SelectedTags)
+            {
+                var gg = await _tag.GetTagById(int.Parse(t));
+                var tt = gg.ToTag();
+                tag.Add(tt);
+            }
+
+
+            article.Tags = tag;
+
+            var ar = await _ArticleServices.EditArticleAsync(article);
+
+
+            if (ar == null)
+            {
+                return RedirectToAction("EditArticle", new { id = article.ArticleId });
+            }
+
+
+            var r = ar.ToArticle();
+            r.Tags = tag;
+            var q = await _artTagRepo.UpdateAsync(r);
             return RedirectToAction("Index");
         }
 
@@ -114,13 +151,13 @@ namespace Articly.Web.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetArticle (int id)
+        public async Task<IActionResult> GetArticle(int id)
         {
-               ArticleResponse?  vr =   await _ArticleServices.GetArticleAsync(   id);
+            ArticleResponse? vr = await _ArticleServices.GetArticleAsync(id);
             //    var at = await _artTagRepo.GetAllTagsInArticle(id);
-               
-                int o = 1; 
-            return View("Article",vr);
+
+            int o = 1;
+            return View(vr);
         }
 
     }

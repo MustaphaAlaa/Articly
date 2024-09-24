@@ -45,11 +45,11 @@ public class TagsController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> UpdateTag(int TagId)
+    public async Task<IActionResult> UpdateTag(int id)
     {
         _Logger.LogInformation($"Reached To (HttpGet)UpdaetTag() In {this.GetType().Name}");
 
-        var GetTag = await _TagServices.GetTagById(TagId);
+        var GetTag = await _TagServices.GetTagById(id);
         if (GetTag != null)
             return View(GetTag);
         else
@@ -99,6 +99,11 @@ public class TagsController : Controller
         }
         var tag = await _TagServices.GetTagById(id);
 
+        if (tag == null)
+        {
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            return RedirectToAction("index");
+        }
 
         return View(tag);
     }

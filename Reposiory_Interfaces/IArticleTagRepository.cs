@@ -12,7 +12,7 @@ namespace Reposiory_Interfaces
 
         public Task<ArticleTag> AddAsync(ArticleTag article);
 
-        public Task<ArticleTag?> UpdateAsync(ArticleTag article);
+        public Task<int> UpdateAsync(Article article);
 
         public Task<bool> DeleteAsync(int Id);
 
@@ -22,6 +22,8 @@ namespace Reposiory_Interfaces
 
         public Task<List<ArticleTag>> GetAllTagsInArticle(int ArticleId);
         public Task<List<ArticleTag>> GetAllArticlesInTag(int TagId);
+
+        public Task DeleteAllArticleTags(int ArticleId);
 
     }
 }

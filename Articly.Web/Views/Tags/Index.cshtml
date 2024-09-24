@@ -4,7 +4,7 @@
     ViewData["Title"] = "All Tags";
 }
 
-<h1 class="h1 text-center" > Tags List</h1>
+<h1 class="h1 text-center" > Tag  List</h1>
     
 
 <a asp-controller="tags" asp-action="AddTag" class="btn btn-primary m-2">Add Tag</a>
@@ -23,10 +23,10 @@
                 <tr>
                     <td>@tag.Name</td>
                     <td>
-                    <a asp-action="GetTag" asp-controller="tags" asp-route-id="@tag.TagID" class="stretched-link link-primary">@tag.DisplayName</a>
+                    <a asp-action="GetTag" asp-controller="tags" asp-route-id="@tag.TagId" class="  link-primary">@tag.DisplayName</a>
                       </td>
                     <td>
-                        <a asp-action="updatetag" asp-controller="tags" asp-route-TagId = "@tag.TagID"    class="btn btn-warning">Update</a>
+                        <a asp-action="updatetag" asp-controller="tags" asp-route-id = "@tag.TagId"    class="btn btn-warning">Update</a>
                 </td>
                 </tr>
             }

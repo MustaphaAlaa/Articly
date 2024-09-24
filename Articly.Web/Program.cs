@@ -7,6 +7,7 @@ using Repositories;
 using Articly_Services;
 using Reposiory_Interfaces;
 using Services;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +34,14 @@ builder.Services.AddScoped<IArticleTagRepository, ArticleTagRepsitory>();
 builder.Services.AddScoped<IArticleTag, ArticleTagServices>();
 
 builder.Services.AddDbContext<ArticleDbContext>(options =>
-     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+
+    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+});
+
+
 
 builder.Services.AddHttpLogging(options =>
 {

@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Articly.Entites.Migrations
 {
     [DbContext(typeof(ArticleDbContext))]
-    partial class ArticleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240924023917_Delete_CreatedAt_And_UpdatedAt_From_ArticleTag")]
+    partial class Delete_CreatedAt_And_UpdatedAt_From_ArticleTag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

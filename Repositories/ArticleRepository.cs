@@ -28,11 +28,36 @@ namespace Repositories
             return article;
         }
 
-        public async Task<Article> UpdateAsync(Article article)
+        public async Task<int> EditAsync(Article article)
         {
-            _db.Articles.Update(article);
-            await _db.SaveChangesAsync();
-            return article;
+
+            var ArticleToUpdate = await _db.Articles.FirstOrDefaultAsync(art => art.ArticleId == article.ArticleId);
+            //.ExecuteUpdate(setters => setters
+            //.SetProperty(a => a.PageTitle, article.PageTitle)
+            //.SetProperty(a => a.Heading, article.Heading)
+            //.SetProperty(a => a.Contnet, article.Contnet)
+            //.SetProperty(a => a.FeaturedImaageUrl, article.FeaturedImaageUrl)
+            //.SetProperty(a => a.Visible, article.Visible));
+
+
+            //.SetProperty(a => a.Tags, article.Tags));
+            //var ArticleToUpdate = await this.GetByIdAsync(article.ArticleId);
+
+            if (ArticleToUpdate != null)
+            {
+
+                ArticleToUpdate.ShortDescription = article.ShortDescription;
+                ArticleToUpdate.Contnet = article.Contnet;
+                ArticleToUpdate.FeaturedImaageUrl = article.FeaturedImaageUrl;
+                ArticleToUpdate.Heading = article.Heading;
+                ArticleToUpdate.PageTitle = article.PageTitle;
+                ArticleToUpdate.Visible = article.Visible;
+
+
+                _db.Articles.Update(ArticleToUpdate);
+                return await _db.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<bool> DeleteAsync(int Id)
@@ -50,12 +75,12 @@ namespace Repositories
 
         public async Task<Article?> GetByIdAsync(int Id)
         {
-            return await _db.Articles.Include(art=>art.Tags).FirstOrDefaultAsync(a => a.ArticleId == Id);
+            return await _db.Articles.Include(art => art.Tags).FirstOrDefaultAsync(a => a.ArticleId == Id);
         }
 
         public async Task<List<Article>> GetAllAsync()
         {
-            return await _db.Articles.Include(Article=>Article.Tags).Select(a => a).ToListAsync();
+            return await _db.Articles.Include(Article => Article.Tags).Select(a => a).ToListAsync();
         }
     }
 }

@@ -52,9 +52,7 @@ namespace Services
                 await _articleRepository.AddAsync(new ArticleTag()
                 {
                     TagID = t.TagId,
-                    ArticleID = ArticleId,
-                    CreatedAt = DateTime.Now,
-                    UpdatedAt = DateTime.Now,
+                    ArticleID = ArticleId
 
                 });
             }

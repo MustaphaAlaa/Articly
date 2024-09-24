@@ -6,7 +6,7 @@
 
 
 <form method="post" asp-controller="tags" asp-action="DeleteTheTag">
-    <input type="hidden" value="@Model.TagID" asp-for="TagID" />
+    <input type="hidden" value="@Model.TagId" asp-for="TagId" />
     <div class=" form-group">
         <label for="TagName">Name</label>
         <input asp-for="Name" id="TagName" class="form-control" disabled type="text" value="@Model.Name"/>

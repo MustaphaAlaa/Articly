@@ -7,7 +7,7 @@ namespace Entities.ViewsModel.Articles;
 public class UpdateArticleRequest
 {
     [Key]
-    public int ArticleID { get; set; }
+    public int ArticleId { get; set; }
 
     [Required]
     public string Heading { get; set; }
@@ -26,34 +26,14 @@ public class UpdateArticleRequest
 
     public bool Visible { get; set; }
 
-    public IEnumerable<Tag> Tags { get; set; }
+    public ICollection<Tag> Tags { get; set; }
+
+    public List<string> SelectedTags
+    {
+        get; set;
+    }
 
 
-
-    //public Blog ToBlog()
-    //{
-    //    return new Blog()
-    //    {
-    //        BlogId = Guid.NewGuid(),
-
-    //        Heading = this.Heading,
-
-    //        PageTitle = this.PageTitle,
-
-    //        Contnet = this.Contnet,
-
-    //        ShortDescription = this.ShortDescription,
-
-    //        FeaturedImaageUrl = this.FeaturedImaageUrl,
-    //        PublishDate = this.PublishDate,
-
-    //        Author = this.Author,
-
-    //        Visible = this.Visible
-
-
-    //    };
-    //}
 
 
 }

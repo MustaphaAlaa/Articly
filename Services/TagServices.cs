@@ -69,6 +69,10 @@ public class TagService : ITag
     {
         _logger.LogInformation($"Reached To GetTagById() In {this.GetType().Name}");
         var tag = await _tagRepository.GetByIdAsync(id);
+
+        if (tag == null)
+            return null;
+
         return tag.ToResponse();
     }
 

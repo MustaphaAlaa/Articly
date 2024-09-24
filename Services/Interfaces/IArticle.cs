@@ -8,7 +8,7 @@ public interface IArticle
 {
     public Task<ArticleResponse> AddArticleAsync(AddArticleRequest Article);
 
-    public Task<ArticleResponse?> UpdateArticleAsync(UpdateArticleRequest Article);
+    public Task<ArticleResponse?> EditArticleAsync(UpdateArticleRequest Article);
 
     public Task<bool> DeleteArticleAsync(int Id);
 
