@@ -15,10 +15,10 @@
         Written By: <span class="font-weight-bold">  @Model.Author</span>
 </p>
     <p>
-        @foreach(Tag tag in Model.Tags)
-        {
-             <a asp-action="GetTag" asp-controller="Tags" asp-route-id ="@tag.TagId" class="badge bg-secondary">@tag.DisplayName</a> 
-        }
+          @foreach(Tag tag in Model.Tags)
+         {
+              <a asp-action="GetTag" asp-controller="Tags" asp-route-id ="@tag.TagId" class="badge bg-secondary">@tag.DisplayName</a> 
+         } 
     </p>
     </div>  
 

@@ -1,4 +1,5 @@
 ﻿using Entities.Domain;
+using Entities.ViewsModel.Tags;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entities.ViewsModel.Articles;
@@ -21,7 +22,6 @@ public class ArticleResponse
     public string ShortDescription { get; set; }
 
 
-    public string FeaturedImaageUrl { get; set; }
 
     public DateTime PublishDate { get; set; }
 
@@ -30,9 +30,10 @@ public class ArticleResponse
 
     public bool Visible { get; set; }
 
-    // public List<Tag> Tags { get; set; }
+
     public List<string> SelectedTags { get; set; }
 
-    public ICollection<Tag> Tags { get; set; }
+    public List<Tag> Tags { get; set; }
+
 
 }

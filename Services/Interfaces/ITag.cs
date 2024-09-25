@@ -7,16 +7,16 @@ namespace ServicesInterfaces;
 
 public interface ITag
 {
-    public Task<TagResponse?> AddTagAsync(AddTagRequest tag);
+    public Task<Tag?> AddTagAsync(AddTagRequest tag);
 
     public Task<bool> DeleteTag(int id);
 
-    public Task<TagResponse?> UpdateTag(UpdateTagRequest tag);
+    public Task<Tag?> UpdateTag(UpdateTagRequest tag);
 
-    public Task<TagResponse?> GetTagById(int id);
+    public Task<Tag?> GetTagById(int id);
 
-    public Task<TagResponse?> GetTagByName(string name);
+    public Task<Tag?> GetTagByName(string name);
 
-    public Task<List<TagResponse>> GetAll();
+    public Task<List<Tag>> GetAll();
 }
 

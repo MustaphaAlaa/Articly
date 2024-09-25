@@ -8,8 +8,16 @@ public class ArticleTagConfiguration : IEntityTypeConfiguration<ArticleTag>
 {
     public void Configure(EntityTypeBuilder<ArticleTag> builder)
     {
-        builder.HasKey(article => article.Id);
+        builder.HasKey(articleTag => new { articleTag.TagId, articleTag.ArticleId });
 
+
+        builder.HasOne(articleTag => articleTag.Article)
+               .WithMany(article => article.ArticleTag)
+               .HasForeignKey(articleTag => articleTag.ArticleId);
+
+        builder.HasOne(articleTag => articleTag.Tag)
+               .WithMany(tag => tag.ArticleTag)
+               .HasForeignKey(articleTag => articleTag.TagId);
 
 
 

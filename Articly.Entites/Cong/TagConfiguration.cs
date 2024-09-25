@@ -10,11 +10,8 @@ namespace Articly.Entites.Cong
         {
             builder.HasKey(t => t.TagId);
 
-            //Relation Many-To-Many
-            //builder
-            //    .HasMany(a => a.Articles)
-            //    .WithMany(a => a.Tags)
-            //    .UsingEntity<ArticleTag>();
+
+
 
             //Columns
             builder.Property(a => a.Name)
@@ -31,6 +28,8 @@ namespace Articly.Entites.Cong
                     .HasMaxLength(50)
                     .IsRequired(true);
 
+
+            builder.HasIndex(t => t.DisplayName).IsUnique();
 
             builder.ToTable("Tags");
 

@@ -44,10 +44,7 @@
             <input type="text" asp-for="ShortDescription" id="ShortDescription" class="form-control" value="@Model.ShortDescription" />
         </div>
         
-        <div class="mb-3">
-            <label for="FeaturedImaageUrl" class="form-label">Featured Imaage Url: </label>
-            <input type="text" asp-for="FeaturedImaageUrl" id="FeaturedImaageUrl" class="form-control" value="@Model.FeaturedImaageUrl" />
-        </div>
+    
         
          <input type="hidden" asp-for="@Model.ArticleId">
           
@@ -67,12 +64,15 @@
         </div>
         <hr />
  
-        @if (Model.Tags.Count  > 0    )
+        @if (ViewBag.Tags.Count > 0)
         {
- 
-              <div class="mb-3">  
-                  <label class ="form-label" for="a"> Tags </label>
-                        <select
+
+            <div class="mb-3">
+                <label class="form-label" for="a"> Tags </label>
+                <p class="text-danger">Press ctrl + left mouse click to select mort than one tag</p>
+
+
+                <select
                            multiple
                            class="form-select"
                            asp-for="SelectedTags">
@@ -80,7 +80,7 @@
                             
                            @if(ViewBag.Tags != null || ViewBag.Tags.Count >  0){ 
 
-                               @foreach(Tag tag in ViewBag.Tags)
+                               @foreach(var tag in ViewBag.Tags)
                                {
                                        if(Model.Tags.FirstOrDefault(t=>t.TagId == tag.TagId) != null)
                                        { 
@@ -98,18 +98,18 @@
                   
 
               </div> 
-        }else
-        {
-           
-            <a class="link-primary" asp-action="AddTag" asp-controller="Tags"> Add Tag First</a>
-        }
-
-       
-
+        } 
         <hr />
-        <div class="mb-3">
-            <input class="btn btn-dark" type="submit" value="Post It">
+
+        <div class="m-2 d-flex justify-content-between">
+            <div class="mb-3">
+                <input class="btn btn-dark" type="submit" value="Post It">
+            </div>
+            <div class="mb-3">
+                <a class="btn btn-dark" type="submit"  asp-action="DeleteArticle" asp-controller="articles" asp-route-id ="@Model.ArticleId" > Delete It</a>
+            </div>
         </div>
+        
      
     
     </form>

@@ -5,9 +5,8 @@ using ServicesInterfaces;
 using Repository_Interfaces;
 using Repositories;
 using Articly_Services;
-using Reposiory_Interfaces;
-using Services;
 using Microsoft.Extensions.Options;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,15 +28,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ITag, TagService>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IArticle, ArticleServices>();
-builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
-builder.Services.AddScoped<IArticleTagRepository, ArticleTagRepsitory>();
+builder.Services.AddScoped<IArticleTagRepository, ArticleTagRepository>();
 builder.Services.AddScoped<IArticleTag, ArticleTagServices>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
 builder.Services.AddDbContext<ArticleDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 
-    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+    //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
 });
 

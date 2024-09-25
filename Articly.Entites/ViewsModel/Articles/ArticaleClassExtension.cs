@@ -25,10 +25,7 @@ namespace Articly.Entites.ViewsModel.Articles
 
                 ShortDescription = updateArticle.ShortDescription,
 
-                FeaturedImaageUrl = updateArticle.FeaturedImaageUrl,
-
-                Visible = updateArticle.Visible,
-                Tags = updateArticle.Tags,
+                Visible = updateArticle.Visible
 
             };
         }
@@ -55,15 +52,12 @@ namespace Articly.Entites.ViewsModel.Articles
                 ShortDescription = article.ShortDescription,
 
 
-                FeaturedImaageUrl = article.FeaturedImaageUrl,
 
                 PublishDate = article.PublishDate,
 
                 Author = article.Author,
 
-                Visible = article.Visible,
-
-                Tags = article.Tags
+                Visible = article.Visible
             };
         }
 
@@ -87,15 +81,12 @@ namespace Articly.Entites.ViewsModel.Articles
                 ShortDescription = article.ShortDescription,
 
 
-                FeaturedImaageUrl = article.FeaturedImaageUrl,
 
                 PublishDate = article.PublishDate,
 
                 Author = article.Author,
 
-                Visible = article.Visible,
-
-                Tags = article.Tags
+                Visible = article.Visible
             };
         }
 
@@ -119,12 +110,7 @@ namespace Articly.Entites.ViewsModel.Articles
 
                 ShortDescription = article.ShortDescription,
 
-
-                FeaturedImaageUrl = article.FeaturedImaageUrl,
-
-
                 Visible = article.Visible,
-
                 Tags = article.Tags
             };
         }

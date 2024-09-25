@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{087028B2-8352-4EBA-AC6E-CBAFF188686A}|Repositories\\Repositories.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\repositories\\articletagrepsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{087028B2-8352-4EBA-AC6E-CBAFF188686A}|Repositories\\Repositories.csproj|solutionrelative:repositories\\articletagrepsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.web\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|solutionrelative:articly.web\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD645A30-78A0-4279-93C9-2DC04F77A089}|Services\\Services.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD645A30-78A0-4279-93C9-2DC04F77A089}|Services\\Services.csproj|solutionrelative:services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087028B2-8352-4EBA-AC6E-CBAFF188686A}|Repositories\\Repositories.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\repositories\\articlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{087028B2-8352-4EBA-AC6E-CBAFF188686A}|Repositories\\Repositories.csproj|solutionrelative:repositories\\articlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|c:\\users\\anama\\onedrive\\desktop\\articles\\articly.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA79A1F-893A-4325-9609-D65075F21D98}|Articly.Web\\Articly.Web.csproj|solutionrelative:articly.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,76 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Program.cs",
-              "RelativeDocumentMoniker": "Articly.Web\\Program.cs",
-              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Program.cs",
-              "RelativeToolTip": "Articly.Web\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAqwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T03:29:39.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ArticlesController.cs",
-              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Controllers\\ArticlesController.cs",
-              "RelativeDocumentMoniker": "Articly.Web\\Controllers\\ArticlesController.cs",
-              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Articly.Web\\Controllers\\ArticlesController.cs*",
-              "RelativeToolTip": "Articly.Web\\Controllers\\ArticlesController.cs*",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwHsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T02:42:54.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ArticleTagRepsitory.cs",
-              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\ArticleTagRepsitory.cs",
-              "RelativeDocumentMoniker": "Repositories\\ArticleTagRepsitory.cs",
-              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\ArticleTagRepsitory.cs",
-              "RelativeToolTip": "Repositories\\ArticleTagRepsitory.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAswDkAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T02:42:54.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ArticleServices.cs",
-              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Services\\ArticleServices.cs",
-              "RelativeDocumentMoniker": "Services\\ArticleServices.cs",
-              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Services\\ArticleServices.cs",
-              "RelativeToolTip": "Services\\ArticleServices.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAqwHkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T02:42:54.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ArticleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\ArticleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ArticleRepository.cs",
-              "ToolTip": "C:\\Users\\anama\\OneDrive\\Desktop\\Articles\\Repositories\\ArticleRepository.cs",
-              "RelativeToolTip": "Repositories\\ArticleRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwDUAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T02:42:42.9Z",
-              "EditorCaption": ""
             }
           ]
         },

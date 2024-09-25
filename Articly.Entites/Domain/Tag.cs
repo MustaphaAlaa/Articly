@@ -17,8 +17,8 @@ public class Tag
     public string DisplayName { get; set; }
 
 
-    public ICollection<Article> Articles { get; set; }
-    public ICollection<ArticleTag> ArticleTags { get; }
+
+    public ICollection<ArticleTag> ArticleTag { get; }
 
 
 

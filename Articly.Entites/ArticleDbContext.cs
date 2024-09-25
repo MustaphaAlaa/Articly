@@ -7,8 +7,9 @@ public class ArticleDbContext : DbContext
 {
     public DbSet<Article> Articles { get; set; }
     public DbSet<Tag> Tags { get; set; }
+    public DbSet<ArticleTag> ArticleTags { get; set; }
 
-    public DbSet<ArticleTag> ArticleTag { get; set; }
+
 
     public ArticleDbContext(DbContextOptions<ArticleDbContext> options) : base(options) { }
 
@@ -17,10 +18,9 @@ public class ArticleDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.Entity<ArticleTag>().HasKey(at => new { at.ArticleId, at.TagId });
+
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ArticleDbContext).Assembly);
-
-        modelBuilder.Entity<Tag>().HasIndex(tag => tag.DisplayName).IsUnique();
-
     }
 
 }

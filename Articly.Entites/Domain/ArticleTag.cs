@@ -11,11 +11,10 @@ namespace Entities.Domain
 {
     public class ArticleTag
     {
-        [Key]
-        public int Id { get; set; }
 
-        public int TagID { get; set; }
-        public int ArticleID { get; set; }
+
+        public int TagId { get; set; }
+        public int ArticleId { get; set; }
 
 
         public Tag Tag { get; set; }

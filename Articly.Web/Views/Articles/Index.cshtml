@@ -1,49 +1,60 @@
 ﻿@model List<ArticleResponse>
 
-<h1 class="m-3 mt-4">All Articles</h1>
+    <div class="container">
 
 
 
-<div class="container  mt-5">
 
-    <table class="table table-bordered table-striped  ">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Heading</th>
-                <th>Tags</th>
-                <th>Options</th>
-            </tr>
+    <h1 class="m-3 mt-4 text-center">All Articles</h1>
 
-        </thead>
-        <tbody>
-            @foreach (ArticleResponse art in Model)
-            {
+
+
+    <div class="container  mt-5">
+
+        <table class="table table-bordered table-striped  ">
+            <thead>
                 <tr>
-                    <td>@art.ArticleId</td>
-                    <td> <a asp-action="GetArticle" asp-controller="Articles" asp-route-id="@art.ArticleId"
-                            class="link-primary">
 
-                            @art.Heading
-
-                        </a></td>
-                    <td>
-                        @if(art.Tags == null || art.Tags.Count == 0)
-                        {
-                            <span>No Tags In This Article</span>
-                        }else { 
-                            @foreach (Tag tag in art.Tags)
-                            {
-                                <span class="badge bg-success">@tag?.DisplayName</span>
-                            }
-                        }
-                    </td>
-
-                    <td><a class="link-primary" asp-action="EditArticle" asp-controller="Articles" asp-route-id = "@art.ArticleId" > Edit</a></td>
+                    <th>Heading</th>
+                    <th>Tags</th>
+                    <th>Options</th>
                 </tr>
-            }
 
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (ArticleResponse art in Model)
+                {
+                    <tr>
 
-</div>
+                        <td>
+                            <a asp-action="GetArticle" asp-controller="Articles" asp-route-id="@art.ArticleId"
+                               class="link-primary">
+
+                                @art.Heading
+
+                            </a>
+                        </td>
+                        <td>
+                            @if (art.Tags == null || art.Tags.Count == 0)
+                            {
+                                <span>No Tags In This Article</span>
+                            }
+                            else
+                            {
+                                @foreach (var tag in art.Tags)
+                                {
+                                    <span class="badge bg-success">@tag?.DisplayName</span>
+                                }
+                            }
+                        </td>
+
+                        <td><a class="btn btn-warning" asp-action="EditArticle" asp-controller="Articles" asp-route-id="@art.ArticleId"> Edit</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+
+    </div>

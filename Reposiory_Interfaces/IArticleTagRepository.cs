@@ -5,25 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reposiory_Interfaces
+namespace Repository_Interfaces
 {
     public interface IArticleTagRepository
     {
+        public Task<bool> IsRelated(int ArticleId, int TagId);
 
-        public Task<ArticleTag> AddAsync(ArticleTag article);
+        public Task<ArticleTag?> GetRelation(int ArticleId, int TagId);
 
-        public Task<int> UpdateAsync(Article article);
 
-        public Task<bool> DeleteAsync(int Id);
+        public Task<int> Add(int ArticleId, int TagId);
 
-        public Task<ArticleTag?> GetByIdAsync(int Id);
+        public Task<int> Remove(int ArticleId, int TagId);
 
-        public Task<List<ArticleTag>> GetAllAsync();
 
-        public Task<List<ArticleTag>> GetAllTagsInArticle(int ArticleId);
-        public Task<List<ArticleTag>> GetAllArticlesInTag(int TagId);
+        public Task<List<Tag>> GetTagsOnArticle(int ArticleId);
 
-        public Task DeleteAllArticleTags(int ArticleId);
+        public Task<List<Article>> GetArticlesOnTags(int TagId);
+
+
+        public Task<bool> Delete(int ArticleId, int TagId);
 
     }
 }

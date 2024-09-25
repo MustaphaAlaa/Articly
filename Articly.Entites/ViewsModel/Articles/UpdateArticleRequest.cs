@@ -21,8 +21,6 @@ public class UpdateArticleRequest
     [Required]
     public string ShortDescription { get; set; }
 
-    [Required]
-    public string FeaturedImaageUrl { get; set; }
 
     public bool Visible { get; set; }
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Articly.Entites.Migrations
 {
     [DbContext(typeof(ArticleDbContext))]
-    [Migration("20240921171759_Init-proj")]
-    partial class Initproj
+    [Migration("20240924230828_Init-Database")]
+    partial class InitDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,9 +43,6 @@ namespace Articly.Entites.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("VARCHAR");
 
-                    b.Property<string>("FeaturedImaageUrl")
-                        .HasColumnType("VARCHAR");
-
                     b.Property<string>("Heading")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -73,29 +70,15 @@ namespace Articly.Entites.Migrations
 
             modelBuilder.Entity("Entities.Domain.ArticleTag", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("TagId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ArticleID")
+                    b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.HasKey("TagId", "ArticleId");
 
-                    b.Property<int>("TagID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArticleID");
-
-                    b.HasIndex("TagID");
+                    b.HasIndex("ArticleId");
 
                     b.ToTable("ArticleTag", (string)null);
                 });
@@ -120,6 +103,9 @@ namespace Articly.Entites.Migrations
 
                     b.HasKey("TagId");
 
+                    b.HasIndex("DisplayName")
+                        .IsUnique();
+
                     b.ToTable("Tags", (string)null);
                 });
 
@@ -127,13 +113,13 @@ namespace Articly.Entites.Migrations
                 {
                     b.HasOne("Entities.Domain.Article", "Article")
                         .WithMany("ArticleTag")
-                        .HasForeignKey("ArticleID")
+                        .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Entities.Domain.Tag", "Tag")
-                        .WithMany("ArticleTags")
-                        .HasForeignKey("TagID")
+                        .WithMany("ArticleTag")
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -149,7 +135,7 @@ namespace Articly.Entites.Migrations
 
             modelBuilder.Entity("Entities.Domain.Tag", b =>
                 {
-                    b.Navigation("ArticleTags");
+                    b.Navigation("ArticleTag");
                 });
 #pragma warning restore 612, 618
         }

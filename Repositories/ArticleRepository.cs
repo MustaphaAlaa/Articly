@@ -48,7 +48,6 @@ namespace Repositories
 
                 ArticleToUpdate.ShortDescription = article.ShortDescription;
                 ArticleToUpdate.Contnet = article.Contnet;
-                ArticleToUpdate.FeaturedImaageUrl = article.FeaturedImaageUrl;
                 ArticleToUpdate.Heading = article.Heading;
                 ArticleToUpdate.PageTitle = article.PageTitle;
                 ArticleToUpdate.Visible = article.Visible;
@@ -75,12 +74,12 @@ namespace Repositories
 
         public async Task<Article?> GetByIdAsync(int Id)
         {
-            return await _db.Articles.Include(art => art.Tags).FirstOrDefaultAsync(a => a.ArticleId == Id);
+            return await _db.Articles.FirstOrDefaultAsync(a => a.ArticleId == Id);
         }
 
         public async Task<List<Article>> GetAllAsync()
         {
-            return await _db.Articles.Include(Article => Article.Tags).Select(a => a).ToListAsync();
+            return await _db.Articles.Select(a => a).ToListAsync();
         }
     }
 }

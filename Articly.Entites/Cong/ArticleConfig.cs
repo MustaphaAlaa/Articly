@@ -15,11 +15,8 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article>
     {
         builder.HasKey(article => article.ArticleId);
 
-        //Relation Many-To-Many
-        builder
-            .HasMany(a => a.Tags)
-            .WithMany(a => a.Articles)
-            .UsingEntity<ArticleTag>();
+
+
 
 
 
@@ -45,12 +42,6 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article>
             .HasColumnType("VARCHAR")
             .HasMaxLength(70)
             .IsRequired(false);
-
-        builder.Property(a => a.FeaturedImaageUrl)
-            .HasColumnType("VARCHAR")
-            .HasMaxLength(255)
-            .IsRequired(false);
-
 
 
         builder.Property(a => a.Author)

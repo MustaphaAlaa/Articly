@@ -23,8 +23,7 @@ public class Article
     [Required]
     public string ShortDescription { get; set; }
 
-    [Required]
-    public string FeaturedImaageUrl { get; set; }
+
 
     public DateTime PublishDate { get; set; }
 
@@ -34,8 +33,6 @@ public class Article
 
     public bool Visible { get; set; }
 
-    public ICollection<Tag> Tags { get; set; }
-
     public ICollection<ArticleTag> ArticleTag { get; set; }
 
 
@@ -43,23 +40,3 @@ public class Article
 }
 
 
-public static class Extensions
-{
-
-
-    public static TagResponse ToResponse(this Tag tag)
-    {
-        return new TagResponse() { TagId = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
-
-    }
-
-    public static Tag ToTag(this TagResponse tag)
-    {
-        return new Tag() { TagId = tag.TagId, Name = tag.Name, DisplayName = tag.DisplayName, Articles = tag.Articles };
-
-    }
-
-
-
-
-}

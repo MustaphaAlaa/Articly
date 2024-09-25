@@ -3,7 +3,7 @@
 using Entities.Domain;
 using Entities.ViewsModel.Tags;
 using Microsoft.AspNetCore.Mvc;
-
+using Articly.Entites.ViewsModel.Tags;
 using ServicesInterfaces;
 
 namespace Articly.Web.Controllers;
@@ -12,8 +12,10 @@ public class TagsController : Controller
 {
     private readonly ITag _TagServices;
     private readonly ILogger<TagsController> _Logger;
-    public TagsController(ITag tagServices, ILogger<TagsController> logger)
+    private readonly IArticleTag _articleTagServices;
+    public TagsController(IArticleTag articleTag, ITag tagServices, ILogger<TagsController> logger)
     {
+        _articleTagServices = articleTag;
         _Logger = logger;
         _TagServices = tagServices;
     }
@@ -34,6 +36,7 @@ public class TagsController : Controller
 
         return View();
     }
+
     [HttpPost]
     public async Task<IActionResult> AddTag(AddTagRequest tag)
     {
@@ -105,7 +108,21 @@ public class TagsController : Controller
             return RedirectToAction("index");
         }
 
-        return View(tag);
+
+        var tagResponse = tag.ToResponse();
+
+        tagResponse.Articles = await _articleTagServices.GetArticlesOnTag(tagResponse.TagId);
+
+        return View(tagResponse);
     }
 
 }
+
+
+
+
+
+
+
+
+

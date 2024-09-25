@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Articly.Entites.Migrations
 {
     /// <inheritdoc />
-    public partial class Initproj : Migration
+    public partial class InitDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,6 @@ namespace Articly.Entites.Migrations
                     PageTitle = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Contnet = table.Column<string>(type: "VARCHAR(250)", maxLength: 250, nullable: false),
                     ShortDescription = table.Column<string>(type: "VARCHAR(70)", maxLength: 70, nullable: true),
-                    FeaturedImaageUrl = table.Column<string>(type: "VARCHAR", nullable: true),
                     PublishDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Author = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Visible = table.Column<bool>(type: "bit", nullable: false)
@@ -49,39 +48,36 @@ namespace Articly.Entites.Migrations
                 name: "ArticleTag",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TagID = table.Column<int>(type: "int", nullable: false),
-                    ArticleID = table.Column<int>(type: "int", nullable: false)
+                    TagId = table.Column<int>(type: "int", nullable: false),
+                    ArticleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArticleTag", x => x.Id);
+                    table.PrimaryKey("PK_ArticleTag", x => new { x.TagId, x.ArticleId });
                     table.ForeignKey(
-                        name: "FK_ArticleTag_Articles_ArticleID",
-                        column: x => x.ArticleID,
+                        name: "FK_ArticleTag_Articles_ArticleId",
+                        column: x => x.ArticleId,
                         principalTable: "Articles",
                         principalColumn: "ArticleId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ArticleTag_Tags_TagID",
-                        column: x => x.TagID,
+                        name: "FK_ArticleTag_Tags_TagId",
+                        column: x => x.TagId,
                         principalTable: "Tags",
                         principalColumn: "TagId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ArticleTag_ArticleID",
+                name: "IX_ArticleTag_ArticleId",
                 table: "ArticleTag",
-                column: "ArticleID");
+                column: "ArticleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ArticleTag_TagID",
-                table: "ArticleTag",
-                column: "TagID");
+                name: "IX_Tags_DisplayName",
+                table: "Tags",
+                column: "DisplayName",
+                unique: true);
         }
 
         /// <inheritdoc />

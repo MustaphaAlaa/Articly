@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Articly.Entites.ViewsModel.Articles;
+
+
 namespace Articly_Services
 {
     public class ArticleServices : IArticle
@@ -87,10 +89,8 @@ namespace Articly_Services
 
                 UpdatedArticle = await _articleRepository.GetByIdAsync(article.ArticleId);
 
-                //var Found = _articleRepository.GetAllAsync().Result.Exists(a => a.ArticleId == article.ArticleId);
 
                 if (UpdatedArticle == null)
-                    //if (!Found)
                     throw new Exception("Can't Find This ID");
 
                 ModelValidate.ModelValidation(article);
@@ -103,20 +103,13 @@ namespace Articly_Services
 
 
 
-            //UpdatedArticle.ShortDescription = article.ShortDescription;
-            //UpdatedArticle.Contnet = article.Contnet;
-            //UpdatedArticle.FeaturedImaageUrl = article.FeaturedImaageUrl;
-            //UpdatedArticle.Heading = article.Heading;
-            //UpdatedArticle.PageTitle = article.PageTitle;
-            //UpdatedArticle.Visible = article.Visible;
+
             UpdatedArticle.ArticleId = article.ArticleId;
             UpdatedArticle.ShortDescription = article.ShortDescription;
             UpdatedArticle.Contnet = article.Contnet;
-            UpdatedArticle.FeaturedImaageUrl = article.FeaturedImaageUrl;
             UpdatedArticle.Heading = article.Heading;
             UpdatedArticle.PageTitle = article.PageTitle;
             UpdatedArticle.Visible = article.Visible;
-            UpdatedArticle.Tags = article.Tags;
 
 
             int Updated = await _articleRepository.EditAsync(UpdatedArticle);

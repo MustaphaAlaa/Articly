@@ -3,9 +3,8 @@
 @{
     ViewData["Title"] = "Add Article";
 
-    // ViewBag.TagsOnArticle = new List<String>();
-
-    // bool selected = false;
+    ViewBag.TagsOnArticle = new List<String>();
+ 
 
 }
 
@@ -20,6 +19,9 @@
     </svg>
     Add Article 
 </h2>
+
+@if(ViewBag.Tags.Count > 0 || ViewBag.Tags != null)
+{ 
 
 <div class="container">
 
@@ -45,10 +47,7 @@
             <input type="text" asp-for="ShortDescription" id="ShortDescription" class="form-control" />
         </div>
         
-        <div class="mb-3">
-            <label for="FeaturedImaageUrl" class="form-label">Featured Imaage Url: </label>
-            <input type="text" asp-for="FeaturedImaageUrl" id="FeaturedImaageUrl" class="form-control" />
-        </div>
+      
         
          <input type="hidden" asp-for="PublishDate">
 
@@ -65,40 +64,25 @@
             </label>
         </div>
         <hr />
- 
-        @if ( ViewBag.Tags.Count  > 0    )
-        {
+  
  
               <div class="mb-3">  
                   <label class ="form-label" for="a"> Tags </label>
+                <p class="text-danger">Press ctrl + left mouse click to select mort than one tag</p>
+
                         <select
                            multiple
                            class="form-select"
                            asp-for="SelectedTags">
-                           @foreach(TagResponse tag in ViewBag.Tags)
+                           @foreach(Tag   tag in ViewBag.Tags)
                            {
 
                                  <option value="@tag.TagId">@tag.DisplayName</option>
                         
                            }
               </select>  
-
-                 @* @for(int i =0; i < Model.SelectedTags.Capacity ; i++)
-                 {
-                      Model.SelectedTags.Add("");
-                     <input id="@ViewBag.Tags[i].DisplayName" type="checkbox" value="@ViewBag.Tags[i].TagID" asp-for="@Model.SelectedTags[i]" />
-                     <label class="form-label" name="@ViewBag.Tags[i].DisplayName">@ViewBag.Tags[i].DisplayName</label>
-
-                 } *@
-
               </div> 
-        }else
-        {
-            <a class="link-primary" asp-action="AddTag" asp-controller="Tags"> Add Tag First</a>
-        }
-
        
-
         <hr />
         <div class="mb-3">
             <input class="btn btn-dark" type="submit" value="Post It">
@@ -109,4 +93,11 @@
     @{
         Model.SelectedTags = ViewBag.TagsOnArticle;
     }
-</div>
+    </div>
+
+}else
+
+{
+    <h2 class="m-5">There Is No Tag In Website Yet.</h2>
+    <a asp-action="adtag" asp-controller="tags"> Add First Tag In WebSite</a>
+}

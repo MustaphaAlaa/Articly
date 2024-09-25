@@ -1,5 +1,5 @@
 ﻿@* @using Entities.Domain; *@
-@model List<TagResponse>
+@model List<Tag>
 @{
     ViewData["Title"] = "All Tags";
 }
@@ -9,7 +9,7 @@
 
 <a asp-controller="tags" asp-action="AddTag" class="btn btn-primary m-2">Add Tag</a>
 
-<table class="table table-striped table-bordered m-2">
+<table class="table table-striped table-bordered m-2    ">
     <thead>
         <tr>
             <td>Tag Name</td>
@@ -26,7 +26,7 @@
                     <a asp-action="GetTag" asp-controller="tags" asp-route-id="@tag.TagId" class="  link-primary">@tag.DisplayName</a>
                       </td>
                     <td>
-                        <a asp-action="updatetag" asp-controller="tags" asp-route-id = "@tag.TagId"    class="btn btn-warning">Update</a>
+                    <a asp-action="updatetag" asp-controller="tags" asp-route-id="@tag.TagId" class="btn btn-warning">Edit</a>
                 </td>
                 </tr>
             }

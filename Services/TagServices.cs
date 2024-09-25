@@ -6,7 +6,6 @@ using Repository_Interfaces;
 using Microsoft.Extensions.Logging;
 using Bloggie.Services.Helper;
 using Entities.ViewsModel.Tags;
-using Entities.ViewsModel.Tags;
 
 namespace Articly_Services;
 
@@ -23,7 +22,7 @@ public class TagService : ITag
         _logger = logger;
     }
 
-    public async Task<TagResponse?> AddTagAsync(AddTagRequest TagRequest)
+    public async Task<Tag?> AddTagAsync(AddTagRequest TagRequest)
     {
         _logger.LogInformation($"Reached To AddTag() In {this.GetType().Name}");
         try
@@ -44,13 +43,12 @@ public class TagService : ITag
             _logger.LogError(exception.Message);
             return null;
         }
-        Tag tag = TagRequest.ToTag();
 
 
-        await _tagRepository.AddAsync(tag);
+        Tag tag = await _tagRepository.AddAsync(TagRequest.ToTag());
 
 
-        return tag.ToResponse();
+        return tag;
     }
 
     public async Task<bool> DeleteTag(int id)
@@ -65,7 +63,7 @@ public class TagService : ITag
         return await _tagRepository.DeleteAsync(id);
     }
 
-    public async Task<TagResponse?> GetTagById(int id)
+    public async Task<Tag?> GetTagById(int id)
     {
         _logger.LogInformation($"Reached To GetTagById() In {this.GetType().Name}");
         var tag = await _tagRepository.GetByIdAsync(id);
@@ -73,10 +71,10 @@ public class TagService : ITag
         if (tag == null)
             return null;
 
-        return tag.ToResponse();
+        return tag;
     }
 
-    public async Task<TagResponse?> GetTagByName(string name)
+    public async Task<Tag?> GetTagByName(string name)
     {
         _logger.LogInformation($"Reached To GetTagByName() In {this.GetType().Name}");
         _logger.LogDebug("Pram", name);
@@ -86,7 +84,7 @@ public class TagService : ITag
         return tag;
     }
 
-    public async Task<TagResponse?> UpdateTag(UpdateTagRequest tag)
+    public async Task<Tag?> UpdateTag(UpdateTagRequest tag)
     {
         Tag? UpdatedTag;
         try
@@ -113,17 +111,15 @@ public class TagService : ITag
 
         Tag TagIsUpdated = await _tagRepository.UpdateAsync(UpdatedTag);
 
-        return TagIsUpdated.ToResponse();
+        return TagIsUpdated;
     }
-    public async Task<List<TagResponse>> GetAll()
+    public async Task<List<Tag>> GetAll()
     {
         _logger.LogInformation("Reached To GetAll In TagServices");
 
         var TagResponseList = await _tagRepository.GetAllAsync();
 
         return TagResponseList
-            .ToList()
-            .Select(tag => tag.ToResponse())
             .ToList();
     }
 

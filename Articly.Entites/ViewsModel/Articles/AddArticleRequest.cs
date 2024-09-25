@@ -25,8 +25,7 @@ public class AddArticleRequest
     [Required]
     public string ShortDescription { get; set; }
 
-    [Required]
-    public string FeaturedImaageUrl { get; set; }
+
 
     public DateTime PublishDate { get; set; }
 
@@ -36,7 +35,7 @@ public class AddArticleRequest
 
     public bool Visible { get; set; }
 
-    public List<Tag> Tags { get; set; }
+
     public List<string> SelectedTags
     {
         get; set;
@@ -58,7 +57,6 @@ public class AddArticleRequest
 
             ShortDescription = this.ShortDescription,
 
-            FeaturedImaageUrl = this.FeaturedImaageUrl,
             PublishDate = this.PublishDate,
 
             Author = this.Author,
